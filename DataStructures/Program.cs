@@ -7,9 +7,6 @@ namespace DataStructures
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            HappyNumber happy = new HappyNumber();
-            Console.WriteLine(happy.IsHappy(19));
-
         }
     }
 }
