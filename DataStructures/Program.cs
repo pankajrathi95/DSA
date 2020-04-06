@@ -7,8 +7,8 @@ namespace DataStructures
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            BuyAndSellStock buyAndSellStock = new BuyAndSellStock();
-            buyAndSellStock.MaxProfit(new int[] { 2, 4, 1 });
+            GroupAnagrams groupAnagrams = new GroupAnagrams();
+            groupAnagrams.GroupTheAnagrams(new string[] { "eat", "tea", "tan", "ate", "nat", "bat" });
         }
     }
 }
