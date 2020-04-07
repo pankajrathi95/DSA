@@ -7,8 +7,8 @@ namespace DataStructures
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            GroupAnagrams groupAnagrams = new GroupAnagrams();
-            groupAnagrams.GroupTheAnagrams(new string[] { "eat", "tea", "tan", "ate", "nat", "bat" });
+            CountingElements countingElements = new CountingElements();
+            countingElements.CountElements(new int[] { 1, 1, 3, 3, 5, 5, 7, 7 });
         }
     }
 }
