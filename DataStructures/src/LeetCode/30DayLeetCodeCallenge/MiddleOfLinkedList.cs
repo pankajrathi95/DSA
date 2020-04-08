@@ -48,4 +48,19 @@ public class MiddleLinkedList
 
         return current;
     }
+
+    ///This is more faster and uses only single loop to find the middle element.
+    public ListNode MiddleNodeUsingSlowFast(ListNode head)
+    {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
 }
