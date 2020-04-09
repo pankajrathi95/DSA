@@ -8,15 +8,8 @@ namespace DataStructures
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            MiddleLinkedList middleLinkedList = new MiddleLinkedList();
-            MiddleLinkedList.ListNode listNode = new ListNode(1);
-            listNode.next = new ListNode(2);
-            listNode.next.next = new ListNode(3);
-            listNode.next.next.next = new ListNode(4);
-            listNode.next.next.next.next = new ListNode(5);
-            listNode.next.next.next.next.next = new ListNode(6);
-
-            var middle = middleLinkedList.MiddleNode(listNode);
+            BackspaceStringCompare backspaceString = new BackspaceStringCompare();
+            backspaceString.BackspaceCompare("y#fo##f", "y#f#o##f");
         }
     }
 }
