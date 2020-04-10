@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using static MiddleLinkedList;
 
 namespace DataStructures
@@ -8,8 +9,6 @@ namespace DataStructures
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            BackspaceStringCompare backspaceString = new BackspaceStringCompare();
-            backspaceString.BackspaceCompare("y#fo##f", "y#f#o##f");
         }
     }
 }
