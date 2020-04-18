@@ -9,8 +9,13 @@ namespace DataStructures
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            ValidParenthesisString valid = new ValidParenthesisString();
-            Console.WriteLine(valid.CheckValidString("(())((())()()(*)(*()(())())())()()((()())((()))(*"));
+            MinimumPathSum minimumPathSum = new MinimumPathSum();
+            int[][] array = new int[3][];
+
+            array[0] = new int[] { 1, 3, 1 };
+            array[1] = new int[] { 1, 5, 1 };
+            array[2] = new int[] { 4, 2, 1 };
+            minimumPathSum.MinPathSum(array);
         }
     }
 }
