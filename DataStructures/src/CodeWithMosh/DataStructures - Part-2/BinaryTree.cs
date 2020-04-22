@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 class BinaryTree
 {
@@ -133,7 +135,7 @@ class BinaryTree
             return -1;
         }
 
-        if (root.left == null && root.right == null)
+        if (IsLeafNode(root))
         {
             return 0;
         }
@@ -148,7 +150,7 @@ class BinaryTree
 
     private int Min(Node root)
     {
-        if (root.left == null && root.right == null)
+        if (IsLeafNode(root))
         {
             return root.value;
         }
@@ -198,12 +200,14 @@ class BinaryTree
         return IsBinarySearchTree(root.left, min, root.value - 1) && IsBinarySearchTree(root.right, root.value + 1, max);
     }
 
-    public void PrintNodesAtDistance(int length)
+    public IList<int> GetNodesAtDistance(int length)
     {
-        PrintNodesAtDistance(root, length);
+        var list = new List<int>();
+        GetNodesAtDistance(root, length, list);
+        return list;
     }
 
-    private void PrintNodesAtDistance(Node root, int length)
+    private void GetNodesAtDistance(Node root, int length, IList<int> list)
     {
         if (root == null)
         {
@@ -216,7 +220,160 @@ class BinaryTree
             return;
         }
 
-        PrintNodesAtDistance(root.left, length--);
-        PrintNodesAtDistance(root.right, length - 1);
+        GetNodesAtDistance(root.left, length - 1, list);
+        GetNodesAtDistance(root.right, length - 1, list);
+    }
+
+    public void TraversalLevelOrder()
+    {
+        for (int i = 0; i <= Height(); i++)
+        {
+            foreach (var value in GetNodesAtDistance(i))
+            {
+                Console.WriteLine(value);
+            }
+        }
+    }
+
+    public int Size()
+    {
+        return Size(root);
+    }
+
+    private int Size(Node root)
+    {
+        if (root == null)
+        {
+            return 0;
+        }
+
+        if (IsLeafNode(root))
+        {
+            return 1;
+        }
+
+        return 1 + Size(root.left) + Size(root.right);
+    }
+
+    public bool IsLeafNode(Node root)
+    {
+        return root.left == null && root.right == null;
+    }
+
+    public int CountLeaves()
+    {
+        return CountLeaves(root);
+    }
+
+    private int CountLeaves(Node root)
+    {
+        if (root == null)
+        {
+            return 0;
+        }
+
+        if (IsLeafNode(root))
+        {
+            return 1;
+        }
+
+        return CountLeaves(root.left) + CountLeaves(root.right);
+    }
+
+    public int Max()
+    {
+        return Max(root);
+    }
+
+    private int Max(Node root)
+    {
+        if (root == null)
+        {
+            throw new InvalidOperationException();
+        }
+
+        if (root.right == null)
+        {
+            return root.value;
+        }
+        else
+        {
+            return Max(root.right);
+        }
+    }
+
+    public bool Contains(int value)
+    {
+        return Contains(root, value);
+    }
+
+    private bool Contains(Node root, int value)
+    {
+        if (root == null)
+        {
+            return false;
+        }
+
+        if (value < root.value)
+        {
+            return Contains(root.left, value);
+        }
+        else if (value > root.value)
+        {
+            return Contains(root.right, value);
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public bool AreSiblings(int left, int right)
+    {
+        return AreSiblings(root, left, right);
+    }
+
+    private bool AreSiblings(Node root, int left, int right)
+    {
+        if (root == null || IsLeafNode(root))
+        {
+            return false;
+        }
+
+        if (root.left.value == left && root.right.value == right)
+        {
+            return true;
+        }
+
+        return AreSiblings(root.left, left, right) || AreSiblings(root.right, left, right);
+    }
+
+    public IList<int> GetAncestors(int value)
+    {
+        List<int> list = new List<int>();
+        GetAncestors(root, value, list);
+        return list;
+    }
+
+    private bool GetAncestors(Node root, int value, IList<int> list)
+    {
+        if (root == null)
+        {
+            return false;
+        }
+
+        if (value == root.value)
+        {
+            return true;
+        }
+
+
+        if (GetAncestors(root.left, value, list) || GetAncestors(root.right, value, list))
+        {
+            list.Add(root.value);
+            return true;
+        }
+
+        return false;
     }
 }
