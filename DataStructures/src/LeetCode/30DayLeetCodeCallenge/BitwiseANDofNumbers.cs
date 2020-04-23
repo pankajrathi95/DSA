@@ -13,11 +13,14 @@ Output: 0
 
 */
 
-public class BitwiseANDofNumbers {
-    public int RangeBitwiseAnd(int m, int n) {
-        while (n > m) {
-          n = n & n - 1;
-     }
-     return m & n;
+public class BitwiseANDofNumbers
+{
+    public int RangeBitwiseAnd(int m, int n)
+    {
+        while (n > m)
+        {
+            n = n & n - 1;
+        }
+        return m & n;
     }
 }

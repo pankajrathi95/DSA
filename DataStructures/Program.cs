@@ -21,7 +21,8 @@ namespace DataStructures
 
             Console.WriteLine(tree.GetAncestors(81));
 
-
+            BitwiseANDofNumbers bitwise = new BitwiseANDofNumbers();
+            bitwise.RangeBitwiseAnd(5, 7);
         }
     }
 }
