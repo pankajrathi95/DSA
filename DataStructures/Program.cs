@@ -20,6 +20,8 @@ namespace DataStructures
             tree.Insert(10);
 
             Console.WriteLine(tree.GetAncestors(81));
+
+
         }
     }
 }
