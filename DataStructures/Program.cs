@@ -21,9 +21,8 @@ namespace DataStructures
 
             // Console.WriteLine(tree.GetAncestors(81));
 
-            LRUCache lRUCache = new LRUCache(2);
-
-            lRUCache.Get(1);
+            JumpGame game = new JumpGame();
+            game.CanJump(new int[] { 3, 2, 1, 0, 4 });
         }
     }
 }
