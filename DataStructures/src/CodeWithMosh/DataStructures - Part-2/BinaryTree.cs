@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 class BinaryTree
 {
-    public class Node
+    internal class Node
     {
         public int value;
         public Node left;

@@ -21,8 +21,14 @@ namespace DataStructures
 
             // Console.WriteLine(tree.GetAncestors(81));
 
-            JumpGame game = new JumpGame();
-            game.CanJump(new int[] { 3, 2, 1, 0, 4 });
+            Heap heap = new Heap(10);
+            heap.Insert(10);
+            heap.Insert(5);
+            heap.Insert(17);
+            heap.Insert(4);
+            heap.Insert(22);
+            heap.Remove();
+            heap.Remove();
         }
     }
 }
