@@ -30,33 +30,7 @@ DP[i][j] = DP[i - 1][j - 1] + 1 , if text1[i] == text2[j] DP[i][j] = max(DP[i - 
 */
 
 https://www.youtube.com/watch?v=NnD96abizww
-
-//Recursive solution:
-
 using System;
-
-class Solution
-{
-
-    public int longestCommonSubsequence(String text1, String text2, int m, int n)
-    {
-        if (m == 0 || n == 0)
-            return 0;
-
-        if (text1.charAt(m - 1) == text2.charAt(n - 1))
-            return longestCommonSubsequence(text1, text2, m - 1, n - 1) + 1;
-
-        return Math.max(longestCommonSubsequence(text1, text2, m - 1, n), longestCommonSubsequence(text1, text2, m, n - 1));
-
-    }
-    public int longestCommonSubsequence(String text1, String text2)
-    {
-        return longestCommonSubsequence(text1, text2, text1.length(), text2.length());
-    }
-}
-
-
-//Dynamic programming solution:
 
 class LongestCommonSubsequence
 {
