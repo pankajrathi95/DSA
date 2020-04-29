@@ -29,7 +29,6 @@ Try dynamic programming. DP[i][j] represents the longest common subsequence of t
 DP[i][j] = DP[i - 1][j - 1] + 1 , if text1[i] == text2[j] DP[i][j] = max(DP[i - 1][j], DP[i][j - 1]) , otherwise
 */
 
-https://www.youtube.com/watch?v=NnD96abizww
 using System;
 
 class LongestCommonSubsequence
