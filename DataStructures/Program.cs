@@ -21,14 +21,11 @@ namespace DataStructures
 
             // Console.WriteLine(tree.GetAncestors(81));
 
-            Heap heap = new Heap(10);
-            heap.Insert(10);
-            heap.Insert(5);
-            heap.Insert(17);
-            heap.Insert(4);
-            heap.Insert(22);
-            heap.Remove();
-            heap.Remove();
+            // Heapify heapify = new Heapify();
+            // int[] values = heapify.HeapifyIt(new int[] { 5, 3, 8, 4, 1, 2 });
+
+            CheckIfStringValidSequence check = new CheckIfStringValidSequence();
+            check.IsValidSequence();
         }
     }
 }
