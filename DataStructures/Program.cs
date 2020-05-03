@@ -24,8 +24,8 @@ namespace DataStructures
             // Heapify heapify = new Heapify();
             // int[] values = heapify.HeapifyIt(new int[] { 5, 3, 8, 4, 1, 2 });
 
-            int[] numbers = new int[] { 5, 3, 8, 4, 1, 2 };
-            Console.WriteLine(MaxHeap.KthLargestItem(numbers, 4));
+            RansomNote ransom = new RansomNote();
+            ransom.CanConstruct("aa", "ab");
         }
     }
 }
