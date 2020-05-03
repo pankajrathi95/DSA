@@ -24,8 +24,8 @@ namespace DataStructures
             // Heapify heapify = new Heapify();
             // int[] values = heapify.HeapifyIt(new int[] { 5, 3, 8, 4, 1, 2 });
 
-            FirstBadVersion first = new FirstBadVersion();
-            first.FindFirstBadVersion(2126753390);
+            int[] numbers = new int[] { 5, 3, 8, 4, 1, 2 };
+            Console.WriteLine(MaxHeap.KthLargestItem(numbers, 4));
         }
     }
 }

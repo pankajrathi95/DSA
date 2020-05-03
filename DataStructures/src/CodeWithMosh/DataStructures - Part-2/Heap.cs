@@ -123,4 +123,14 @@ class Heap
     {
         return size == 0;
     }
+
+    public int Max()
+    {
+        if (IsEmpty())
+        {
+            throw new InvalidOperationException();
+        }
+
+        return nums[0];
+    }
 }

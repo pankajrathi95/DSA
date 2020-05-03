@@ -49,4 +49,9 @@ public class FirstBadVersion
             return BadVersion(middle + 1, last);
         }
     }
+
+    private bool IsBadVersion(int num)
+    {
+        return true;
+    }
 }
