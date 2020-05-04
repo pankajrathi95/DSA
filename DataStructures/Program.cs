@@ -24,8 +24,12 @@ namespace DataStructures
             // Heapify heapify = new Heapify();
             // int[] values = heapify.HeapifyIt(new int[] { 5, 3, 8, 4, 1, 2 });
 
-            RansomNote ransom = new RansomNote();
-            ransom.CanConstruct("aa", "ab");
+            // Trie trie = new Trie();
+            // trie.Insert("cat");
+            // trie.Insert("calm");
+
+            NumberComplement number = new NumberComplement();
+            number.FindComplement(5);
         }
     }
 }

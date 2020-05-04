@@ -1,31 +1,46 @@
+using System.Collections.Generic;
+
 public class Trie
 {
     public class Node
     {
         public char value;
-        public Node[] children = new Node[26];
+        public Dictionary<char, Node> children = new Dictionary<char, Node>();
         public bool isEndOfWord;
         public Node(char value)
         {
             this.value = value;
         }
+
+        public bool HasChild(char ch)
+        {
+            return children.ContainsKey(ch);
+        }
+
+        public void AddChild(char ch)
+        {
+            children.Add(ch, new Node(ch));
+        }
+
+        public Node GetChild(char ch)
+        {
+            return children[ch];
+        }
     }
-    Node root = new Node('0');
+    Node root = new Node(' ');
     public void Insert(string word)
     {
+        var current = root;
         foreach (char ch in word)
         {
-            Insert(root, ch);
-        }
-    }
+            if (!current.HasChild(ch))
+            {
+                current.AddChild(ch);
+            }
 
-    private void Insert(Node node, char ch)
-    {
-        var current = node;
-        var index = ch - 'a';
-        if (current.children[index] == null)
-        {
-            current.children[index] = new Node(ch);
+            current = current.GetChild(ch);
         }
+
+        current.isEndOfWord = true;
     }
 }
