@@ -28,8 +28,8 @@ namespace DataStructures
             // trie.Insert("cat");
             // trie.Insert("calm");
 
-            NumberComplement number = new NumberComplement();
-            number.FindComplement(5);
+            FirstUniqueCharacterInAString first = new FirstUniqueCharacterInAString();
+            Console.WriteLine(first.FirstUniqChar("cc"));
         }
     }
 }
