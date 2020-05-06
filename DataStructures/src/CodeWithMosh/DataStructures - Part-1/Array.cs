@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part_1
+namespace DataStructures
 {
     class Array
     {
@@ -66,9 +66,9 @@ namespace Part_1
         {
             int max = numArray[0];
 
-            for(int i = 1; i < count; i++)
+            for (int i = 1; i < count; i++)
             {
-                if(max < numArray[i])
+                if (max < numArray[i])
                 {
                     max = numArray[i];
                 }

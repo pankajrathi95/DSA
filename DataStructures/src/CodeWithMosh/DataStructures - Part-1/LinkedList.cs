@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part_1
+namespace DataStructures
 {
     public class LinkedList
     {
@@ -219,7 +219,7 @@ namespace Part_1
             Node node = first;
             Node middle = first;
 
-            while (node != last  && node.next != last)
+            while (node != last && node.next != last)
             {
                 middle = middle.next;
                 node = node.next.next;

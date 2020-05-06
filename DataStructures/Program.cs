@@ -24,12 +24,16 @@ namespace DataStructures
             // Heapify heapify = new Heapify();
             // int[] values = heapify.HeapifyIt(new int[] { 5, 3, 8, 4, 1, 2 });
 
-            // Trie trie = new Trie();
-            // trie.Insert("cat");
-            // trie.Insert("calm");
+            Trie trie = new Trie();
+            trie.Insert("cat");
+            trie.Insert("calm");
+            trie.Remove("cat");
+            //Console.WriteLine(trie.Contains("ca"));
+            Console.WriteLine(trie.Contains("cat"));
+            //Console.WriteLine(trie.Contains("cal"));
+            Console.WriteLine(trie.Contains("calm"));
+            // trie.Traverse();
 
-            FirstUniqueCharacterInAString first = new FirstUniqueCharacterInAString();
-            Console.WriteLine(first.FirstUniqChar("cc"));
         }
     }
 }

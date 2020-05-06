@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part_1
+namespace DataStructures
 {
     class ArrayQueue
     {
@@ -57,6 +57,6 @@ namespace Part_1
         public int Peek()
         {
             return queue[back];
-        }   
+        }
     }
 }

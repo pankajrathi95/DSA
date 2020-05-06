@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part_1
+namespace DataStructures
 {
     /// <summary>
     /// Hashmap implementation using Linear probing.
@@ -44,7 +44,7 @@ namespace Part_1
                 entries[index] = new Entry(key, value);
             }
             else
-            {               
+            {
                 entries[GetAnotherIndex(key)] = new Entry(key, value);
             }
             count++;

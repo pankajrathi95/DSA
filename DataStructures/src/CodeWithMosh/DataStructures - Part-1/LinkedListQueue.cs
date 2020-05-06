@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part_1
+namespace DataStructures
 {
     class LinkedListQueue
     {
@@ -25,7 +25,7 @@ namespace Part_1
         public void Enqueue(int item)
         {
             var node = new Node(item);
-            if(IsEmpty())
+            if (IsEmpty())
             {
                 first = last = node;
             }

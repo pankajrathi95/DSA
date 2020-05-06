@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part_1
+namespace DataStructures
 {
     class HashMapExercises
     {
@@ -70,7 +70,7 @@ namespace Part_1
 
             bool firstTime = true;
             KeyValuePair<int, int> max = new KeyValuePair<int, int>();
-            foreach( var entry in keyValuePairs)
+            foreach (var entry in keyValuePairs)
             {
                 if (firstTime)
                 {
@@ -90,18 +90,18 @@ namespace Part_1
         public int CountPairsWithDiff(int[] numbers, int diff)
         {
             HashSet<int> set = new HashSet<int>();
-            foreach(var number in numbers)
+            foreach (var number in numbers)
             {
                 set.Add(number);
             }
             int count = 0;
-            foreach(var number in numbers)
+            foreach (var number in numbers)
             {
                 if (set.Contains(number + diff))
                 {
                     count++;
                 }
-                if(set.Contains(number - diff))
+                if (set.Contains(number - diff))
                 {
                     count++;
                 }
@@ -115,7 +115,7 @@ namespace Part_1
         {
             Dictionary<int, int> keyValuePairs = new Dictionary<int, int>();
 
-            for (int i = 0; i <numbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
                 int comp = target - numbers[i];
                 if (keyValuePairs.ContainsKey(comp))
