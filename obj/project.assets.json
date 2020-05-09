@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\parathi\\Desktop\\DS and Algo\\Solutions - Github\\DataStructures\\DataStructures.csproj",
+      "projectUniqueName": "C:\\Users\\parathi\\Desktop\\DS and Algo\\Solutions - Github\\DataStructures.csproj",
       "projectName": "DataStructures",
-      "projectPath": "C:\\Users\\parathi\\Desktop\\DS and Algo\\Solutions - Github\\DataStructures\\DataStructures.csproj",
+      "projectPath": "C:\\Users\\parathi\\Desktop\\DS and Algo\\Solutions - Github\\DataStructures.csproj",
       "packagesPath": "C:\\Users\\parathi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\parathi\\Desktop\\DS and Algo\\Solutions - Github\\DataStructures\\obj\\",
+      "outputPath": "C:\\Users\\parathi\\Desktop\\DS and Algo\\Solutions - Github\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
