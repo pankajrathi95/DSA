@@ -9,9 +9,6 @@ namespace DataStructures
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Tries tries = new Tries();
-
-            tries.Insert("pankaj");
         }
     }
 }
