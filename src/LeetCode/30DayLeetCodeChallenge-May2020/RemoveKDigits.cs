@@ -21,7 +21,9 @@ Output: "0"
 Explanation: Remove all the digits from the number and it is left with nothing which is 0.
 */
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 public class RemoveKDigits
