@@ -6,9 +6,10 @@ namespace DataStructures
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MaximumSumCircularSubarray circularSubarray = new MaximumSumCircularSubarray();
+            circularSubarray.MaxSubarraySumCircular(new int[] { 5, -3, 5 });
         }
     }
 }
