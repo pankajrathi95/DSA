@@ -96,6 +96,7 @@ public class MaximumSumCircularSubarray
         return max_global;
     }
 
+    //optimized solution
     public int MaxSubarraySumCircular_Optimized(int[] A)
     {
         int min = Int32.MinValue;

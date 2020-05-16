@@ -8,8 +8,9 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            MaximumSumCircularSubarray circularSubarray = new MaximumSumCircularSubarray();
-            circularSubarray.MaxSubarraySumCircular(new int[] { 5, -3, 5 });
+            OddEvenLinkedList evenLinkedList = new OddEvenLinkedList();
+            OddEvenLinkedList.ListNode head = new OddEvenLinkedList.ListNode(1, new OddEvenLinkedList.ListNode(2, new OddEvenLinkedList.ListNode(3, new OddEvenLinkedList.ListNode(4, new OddEvenLinkedList.ListNode(5, null)))));
+            evenLinkedList.OddEvenList(head);
         }
     }
 }
