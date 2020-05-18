@@ -9,7 +9,7 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             LongestCommonPrefix commonPrefix = new LongestCommonPrefix();
-            commonPrefix.FindLongestCommonPrefix(new string[] { "flower", "flow", "flight" });
+            commonPrefix.FindLongestCommonPrefix(new string[] { "aa", "a" });
         }
     }
 }

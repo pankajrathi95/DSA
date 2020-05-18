@@ -26,6 +26,7 @@ public class LongestCommonPrefix
     public class Node
     {
         public char value;
+        public bool isEndOfWord;
         public Dictionary<char, Node> children = new Dictionary<char, Node>();
 
         public Node(char value)
@@ -44,6 +45,7 @@ public class LongestCommonPrefix
 
                 current = current.children[ch];
             }
+            current.isEndOfWord = true;
         }
     }
 
@@ -54,11 +56,16 @@ public class LongestCommonPrefix
         var current = root;
         foreach (var str in strs)
         {
+            if (str.Length == 0)
+            {
+                return "";
+            }
+
             current.Insert(str, current);
         }
 
         StringBuilder sb = new StringBuilder();
-        while (current.children.Count != 0)
+        while (current.children.Count != 0 && !current.isEndOfWord)
         {
             char ch = ' ';
             foreach (var kvp in current.children)
@@ -75,6 +82,6 @@ public class LongestCommonPrefix
             current = current.children[ch];
         }
 
-        return sb.ToString();
+        return sb.ToString().Length == 0 ? "" : sb.ToString();
     }
 }
