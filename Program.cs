@@ -8,8 +8,8 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            FindAllAnagrams findAllAnagrams = new FindAllAnagrams();
-            findAllAnagrams.FindAnagrams("cbaebabacd", "abc");
+            LongestCommonPrefix commonPrefix = new LongestCommonPrefix();
+            commonPrefix.FindLongestCommonPrefix(new string[] { "flower", "flow", "flight" });
         }
     }
 }
