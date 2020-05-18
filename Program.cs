@@ -8,8 +8,8 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            ReverseInteger integer = new ReverseInteger();
-            integer.Reverse(123);
+            FindAllAnagrams findAllAnagrams = new FindAllAnagrams();
+            findAllAnagrams.FindAnagrams("cbaebabacd", "abc");
         }
     }
 }
