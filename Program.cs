@@ -8,8 +8,8 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            RomanToInteger o = new RomanToInteger();
-            o.RomanToInt("IIV");
+            ValidParentheses parentheses = new ValidParentheses();
+            parentheses.IsValids("()");
         }
     }
 }
