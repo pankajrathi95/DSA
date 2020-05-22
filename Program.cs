@@ -8,10 +8,13 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            MergeTwoSortedLists lists = new MergeTwoSortedLists();
-            MergeTwoSortedLists.ListNode listNode1 = new MergeTwoSortedLists.ListNode(1, new MergeTwoSortedLists.ListNode(2, new MergeTwoSortedLists.ListNode(4, new MergeTwoSortedLists.ListNode(5, new MergeTwoSortedLists.ListNode(6)))));
-            MergeTwoSortedLists.ListNode listNode2 = new MergeTwoSortedLists.ListNode(1, new MergeTwoSortedLists.ListNode(3, new MergeTwoSortedLists.ListNode(4, null)));
-            lists.MergeTwoLists(listNode1, listNode2);
+            int[][] matrix = new int[3][];
+            matrix[0] = new int[] { 0, 1, 1, 1 };
+            matrix[1] = new int[] { 1, 1, 1, 1 };
+            matrix[2] = new int[] { 0, 1, 1, 1 };
+
+            CountSquareSubmatricesWithAllOnes allOnes = new CountSquareSubmatricesWithAllOnes();
+            allOnes.CountSquares(matrix);
         }
     }
 }
