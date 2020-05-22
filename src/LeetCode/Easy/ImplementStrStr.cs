@@ -52,4 +52,19 @@ public class ImplementStrStr
 
         return -1;
     }
+
+    public int StrStr_2(string haystack, string needle)
+    {
+        if (haystack == null || needle == null)
+            return 0;
+
+        if (needle.Length == 0)
+            return 0;
+        if (haystack.Contains(needle))
+        {
+            return haystack.IndexOf(needle);
+        }
+        else
+            return -1;
+    }
 }
