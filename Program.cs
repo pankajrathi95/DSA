@@ -8,6 +8,7 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Hello World!");
             int[] preorder = new int[] { 8, 5, 1, 7, 10, 12 };
             BstFromPreOrder bst = new BstFromPreOrder();
             bst.BstFromPreorder(preorder);
