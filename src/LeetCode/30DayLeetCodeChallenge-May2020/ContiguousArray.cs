@@ -15,7 +15,7 @@ Note: The length of the given binary array will not exceed 50,000.
 using System;
 using System.Collections.Generic;
 
-class ContiguousArray
+class ContiguousArrays
 {
     public int FindMaxLength(int[] nums)
     {
