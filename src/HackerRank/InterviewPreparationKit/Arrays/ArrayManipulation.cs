@@ -1,4 +1,6 @@
 /*
+https://www.hackerrank.com/challenges/crush/problem
+
 Starting with a 1-indexed array of zeros and a list of operations, for each operation add a value to each of the array element between two given indices, inclusive. Once all operations have been performed, return the maximum value in your array.
 
 For example, the length of your array of zeros . Your list of queries is as follows:
@@ -26,36 +28,31 @@ n - the number of elements in your array
 queries - a two dimensional array of queries where each queries[i] contains three integers, a, b, and k.
 */
 
+using System;
 using System.Linq;
 
 class ArrayManipulation
 {
-    public long CalcArrayManipulation(int n, int[,] queries)
+    public static long CalArrayManipulation(int n, int[][] queries)
     {
-        long[] numbers = new long[n];
-
-        /*for (int i = 0; i < 3; i++)
+        long[] values = new long[n];
+        for (int i = 0; i < queries.Length; i++)
         {
-            for (int j = queries[i, 0] - 1; j <= queries[i, 1] - 1; j++)
+            values[queries[i][0] - 1] += queries[i][2];
+
+            if (queries[i][1] + 1 <= n)
             {
-                numbers[j] = queries[i, 2];
+                values[queries[i][1]] -= queries[i][2];
             }
-        }*/
-
-        for (int i = 0; i < 3; i++)
-        {
-            numbers[queries[i, 0] - 1] += queries[i, 2];
-            if (queries[i, 1] + 1 <= n) numbers[queries[i, 1]] -= queries[i, 2];
         }
 
-        long tempMax = 0;
-        long max = 0;
-        for (int i = 0; i < n; i++)
+        long max = values[0];
+        for (int i = 1; i < values.Length; i++)
         {
-            tempMax += numbers[i];
-            if (tempMax > max) max = tempMax;
+            values[i] += values[i - 1];
+            max = Math.Max(max, values[i]);
         }
 
-        return numbers.Max();
+        return max;
     }
 }
