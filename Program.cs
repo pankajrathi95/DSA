@@ -10,9 +10,11 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
 
-            //nsertANodeAtTheTail insert = new InsertANodeAtTheTail();
-            var head = InsertANodeAtTheTail.InsertNodeAtTail(null, 141);
-            var second = InsertANodeAtTheTail.InsertNodeAtTail(head, 200);
+            ReverseALinkedList.SinglyLinkedListNode node = new ReverseALinkedList.SinglyLinkedListNode(1);
+            node.next = new ReverseALinkedList.SinglyLinkedListNode(2);
+            node.next.next = new ReverseALinkedList.SinglyLinkedListNode(3);
+
+            ReverseALinkedList.Reverse(node);
         }
     }
 }
