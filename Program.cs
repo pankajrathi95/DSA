@@ -10,11 +10,15 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
 
-            ReverseALinkedList.SinglyLinkedListNode node = new ReverseALinkedList.SinglyLinkedListNode(1);
-            node.next = new ReverseALinkedList.SinglyLinkedListNode(2);
-            node.next.next = new ReverseALinkedList.SinglyLinkedListNode(3);
+            MergeTwoSortedLinkedLists.SinglyLinkedListNode node = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(1);
+            node.next = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(2);
+            node.next.next = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(3);
 
-            ReverseALinkedList.Reverse(node);
+            MergeTwoSortedLinkedLists.SinglyLinkedListNode node1 = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(3);
+            node.next = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(4);
+            //node.next.next = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(3);
+
+            var nodeF = MergeTwoSortedLinkedLists.MergeLists(node, node1);
         }
     }
 }
