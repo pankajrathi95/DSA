@@ -10,15 +10,15 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
 
-            MergeTwoSortedLinkedLists.SinglyLinkedListNode node = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(1);
-            node.next = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(2);
-            node.next.next = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(3);
+            DeleteDuplicateValues.SinglyLinkedListNode node = new DeleteDuplicateValues.SinglyLinkedListNode(3);
+            node.next = new DeleteDuplicateValues.SinglyLinkedListNode(3);
+            node.next.next = new DeleteDuplicateValues.SinglyLinkedListNode(3);
+            node.next.next.next = new DeleteDuplicateValues.SinglyLinkedListNode(4);
+            node.next.next.next.next = new DeleteDuplicateValues.SinglyLinkedListNode(5);
+            node.next.next.next.next.next = new DeleteDuplicateValues.SinglyLinkedListNode(5);
 
-            MergeTwoSortedLinkedLists.SinglyLinkedListNode node1 = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(3);
-            node.next = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(4);
-            //node.next.next = new MergeTwoSortedLinkedLists.SinglyLinkedListNode(3);
 
-            var nodeF = MergeTwoSortedLinkedLists.MergeLists(node, node1);
+            var nodeF = DeleteDuplicateValues.RemoveDuplicates(node);
         }
     }
 }
