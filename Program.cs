@@ -18,7 +18,7 @@ namespace DataStructures
             node.next.next.next.next.next = new DeleteDuplicateValues.SinglyLinkedListNode(5);
 
 
-            var nodeF = DeleteDuplicateValues.RemoveDuplicates(node);
+            //var nodeF = DeleteDuplicateValues.RemoveDuplicates(node);
         }
     }
 }
