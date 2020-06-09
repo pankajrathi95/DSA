@@ -21,10 +21,10 @@ namespace DataStructures
             //var nodeF = DeleteDuplicateValues.RemoveDuplicates(node);
 
 
-            ReverseADoublyLinkedList.DoublyLinkedListNode node1 = new ReverseADoublyLinkedList.DoublyLinkedListNode(1);
-            ReverseADoublyLinkedList.DoublyLinkedListNode node2 = new ReverseADoublyLinkedList.DoublyLinkedListNode(2);
-            ReverseADoublyLinkedList.DoublyLinkedListNode node3 = new ReverseADoublyLinkedList.DoublyLinkedListNode(3);
-            ReverseADoublyLinkedList.DoublyLinkedListNode node4 = new ReverseADoublyLinkedList.DoublyLinkedListNode(4);
+            InsertingANodeIntoLinkedList.DoublyLinkedListNode node1 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(1);
+            InsertingANodeIntoLinkedList.DoublyLinkedListNode node2 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(2);
+            InsertingANodeIntoLinkedList.DoublyLinkedListNode node3 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(3);
+            //InsertingANodeIntoLinkedList.DoublyLinkedListNode node4 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(10);
 
             node1.next = node2;
             node2.prev = node1;
@@ -32,10 +32,10 @@ namespace DataStructures
             node2.next = node3;
             node3.prev = node2;
 
-            node3.next = node4;
-            node4.prev = node3;
+            //node3.next = node4;
+            //node4.prev = node3;
 
-            var node = ReverseADoublyLinkedList.Reverse(node1);
+            var node = InsertingANodeIntoLinkedList.SortedInsert(node1, 4);
         }
     }
 }
