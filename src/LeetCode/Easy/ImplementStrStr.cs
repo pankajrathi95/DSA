@@ -65,6 +65,8 @@ public class ImplementStrStr
             return haystack.IndexOf(needle);
         }
         else
+        {
             return -1;
+        }
     }
 }
