@@ -21,21 +21,21 @@ namespace DataStructures
             //var nodeF = DeleteDuplicateValues.RemoveDuplicates(node);
 
 
-            InsertingANodeIntoLinkedList.DoublyLinkedListNode node1 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(1);
-            InsertingANodeIntoLinkedList.DoublyLinkedListNode node2 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(2);
-            InsertingANodeIntoLinkedList.DoublyLinkedListNode node3 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(3);
-            //InsertingANodeIntoLinkedList.DoublyLinkedListNode node4 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(10);
+            // InsertingANodeIntoLinkedList.DoublyLinkedListNode node1 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(1);
+            // InsertingANodeIntoLinkedList.DoublyLinkedListNode node2 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(2);
+            // InsertingANodeIntoLinkedList.DoublyLinkedListNode node3 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(3);
+            // //InsertingANodeIntoLinkedList.DoublyLinkedListNode node4 = new InsertingANodeIntoLinkedList.DoublyLinkedListNode(10);
 
-            node1.next = node2;
-            node2.prev = node1;
+            // node1.next = node2;
+            // node2.prev = node1;
 
-            node2.next = node3;
-            node3.prev = node2;
+            // node2.next = node3;
+            // node3.prev = node2;
 
-            //node3.next = node4;
-            //node4.prev = node3;
+            // //node3.next = node4;
+            // //node4.prev = node3;
 
-            var node = InsertingANodeIntoLinkedList.SortedInsert(node1, 4);
+            // var node = InsertingANodeIntoLinkedList.SortedInsert(node1, 4);
         }
     }
 }
