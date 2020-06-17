@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 public class Graph
 {
@@ -21,6 +23,8 @@ public class Graph
     internal Dictionary<string, Node> nodes = new Dictionary<string, Node>();
 
     internal Dictionary<Node, List<Node>> adjacencyList = new Dictionary<Node, List<Node>>();
+
+    internal HashSet<Node> traversalValues = new HashSet<Node>();
     public void AddNode(string label)
     {
         var node = new Node(label);
@@ -110,5 +114,46 @@ public class Graph
         }
 
         adjacencyList[fromNode].Remove(toNode);
+    }
+
+    public void DepthFirstTraversal(string label)
+    {
+        var node = nodes.GetValueOrDefault(label);
+        if (node == null)
+        {
+            throw new InvalidProgramException();
+        }
+
+        DepthFirstTraversal(node);
+    }
+
+    private void DepthFirstTraversal(Node node)
+    {
+        traversalValues.Add(node);
+        Console.Write(node.ToString() + ", ");
+
+        List<Node> items = adjacencyList[node];
+        items.Sort(new Sorting());
+
+        foreach (var item in items)
+        {
+            if (!traversalValues.Contains(item))
+            {
+                DepthFirstTraversal(item);
+            }
+        }
+    }
+
+    public void BreathFirstTraversal(string label)
+    {
+
+    }
+
+    internal class Sorting : IComparer<Node>
+    {
+        public int Compare([AllowNull] Node x, [AllowNull] Node y)
+        {
+            return x.ToString().CompareTo(y.ToString());
+        }
     }
 }
