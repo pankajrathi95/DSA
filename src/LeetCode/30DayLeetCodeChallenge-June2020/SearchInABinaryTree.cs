@@ -38,29 +38,23 @@ public class SearchInABinaryTree
     TreeNode currentRoot = null;
     public TreeNode SearchBST(TreeNode root, int val)
     {
-        SearchBT(root, val);
-        return currentRoot;
-    }
-
-    public void SearchBT(TreeNode root, int val)
-    {
-        if (root == null && currentRoot == null)
+        if (root == null)
         {
-            currentRoot = null;
-            return;
-        }
-        else if (root == null && currentRoot != null)
-        {
-            return;
+            return null;
         }
 
-        if (root != null && root.val == val)
+        if (root.val == val)
         {
-            currentRoot = root;
-            return;
+            return root;
         }
 
-        SearchBT(root.left, val);
-        SearchBT(root.right, val);
+        if (val < root.val)
+        {
+            return SearchBST(root.left, val);
+        }
+        else
+        {
+            return SearchBST(root.right, val);
+        }
     }
 }
