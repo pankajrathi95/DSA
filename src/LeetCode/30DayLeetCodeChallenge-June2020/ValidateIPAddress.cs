@@ -33,6 +33,8 @@ Output: "Neither"
 Explanation: This is neither a IPv4 address nor a IPv6 address.
 */
 
+using System;
+
 public class ValidateIPAddress
 {
     public string ValidIPAddress(string IP)

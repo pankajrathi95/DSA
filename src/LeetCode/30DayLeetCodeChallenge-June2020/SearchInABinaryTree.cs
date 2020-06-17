@@ -35,7 +35,7 @@ public class SearchInABinaryTree
             this.right = right;
         }
     }
-    TreeNode currentRoot = null;
+
     public TreeNode SearchBST(TreeNode root, int val)
     {
         if (root == null)
