@@ -28,8 +28,8 @@ namespace DataStructures
             graph.AddEdge("D", "E");
 
 
-            graph.DepthFirstTraversalIterative("C");
-            graph.BreathFirstTraversal("C");
+
+            Console.WriteLine(graph.HasCycle());
         }
     }
 }

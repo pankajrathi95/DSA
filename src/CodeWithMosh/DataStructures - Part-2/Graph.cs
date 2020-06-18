@@ -208,6 +208,100 @@ public class Graph
         }
     }
 
+    public List<string> TopologicalSort()
+    {
+        Stack<Node> stack = new Stack<Node>();
+        HashSet<Node> visited = new HashSet<Node>();
+        foreach (var node in nodes.Values)
+        {
+            TopologicalSort(node, visited, stack);
+        }
+
+        List<string> sorted = new List<string>();
+
+        while (stack.Count != 0)
+        {
+            sorted.Add(stack.Pop().ToString());
+        }
+
+        return sorted;
+    }
+
+    private void TopologicalSort(Node node, HashSet<Node> visited, Stack<Node> stack)
+    {
+        if (visited.Contains(node))
+        {
+            return;
+        }
+
+        visited.Add(node);
+
+        foreach (var item in adjacencyList[node])
+        {
+            TopologicalSort(item, visited, stack);
+        }
+
+        stack.Push(node);
+    }
+
+    public bool HasCycle()
+    {
+        HashSet<Node> all = new HashSet<Node>();
+        HashSet<Node> visiting = new HashSet<Node>();
+        HashSet<Node> visited = new HashSet<Node>();
+
+        foreach (var node in nodes.Values)
+        {
+            all.Add(node);
+        }
+
+        while (all.Count != 0)
+        {
+            var hashSetEnumerator = all.GetEnumerator();
+            Node current = null;
+            while (hashSetEnumerator.MoveNext())
+            {
+                current = hashSetEnumerator.Current;
+                break;
+            }
+
+            if (HasCycle(current, all, visiting, visited))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool HasCycle(Node current, HashSet<Node> all, HashSet<Node> visiting, HashSet<Node> visited)
+    {
+        all.Remove(current);
+        visiting.Add(current);
+
+        foreach (var item in adjacencyList[current])
+        {
+            if (visited.Contains(item))
+            {
+                continue;
+            }
+
+            if (visiting.Contains(item))
+            {
+                return true;
+            }
+
+            if (HasCycle(item, all, visiting, visited))
+            {
+                return true;
+            }
+        }
+
+        visiting.Remove(current);
+        visited.Add(current);
+        return false;
+    }
+
     internal class Sorting : IComparer<Node>
     {
         public int Compare([AllowNull] Node x, [AllowNull] Node y)
