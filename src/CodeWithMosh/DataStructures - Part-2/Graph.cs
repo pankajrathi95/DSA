@@ -144,9 +144,68 @@ public class Graph
         }
     }
 
+    public void DepthFirstTraversalIterative(string label)
+    {
+        var node = nodes.GetValueOrDefault(label);
+        if (node == null)
+        {
+            throw new InvalidProgramException();
+        }
+
+        Stack<Node> stack = new Stack<Node>();
+        stack.Push(node);
+        while (stack.Count != 0)
+        {
+            var current = stack.Pop();
+
+            if (traversalValues.Contains(current))
+            {
+                continue;
+            }
+
+            Console.Write(current.ToString() + ", ");
+            traversalValues.Add(current);
+            List<Node> items = adjacencyList[current];
+            foreach (var item in items)
+            {
+                if (!traversalValues.Contains(item))
+                {
+                    stack.Push(item);
+                }
+            }
+        }
+    }
+
     public void BreathFirstTraversal(string label)
     {
+        var node = nodes.GetValueOrDefault(label);
+        if (node == null)
+        {
+            throw new InvalidProgramException();
+        }
 
+        Queue<Node> queue = new Queue<Node>();
+        queue.Enqueue(node);
+        while (queue.Count != 0)
+        {
+            var current = queue.Dequeue();
+
+            if (traversalValues.Contains(current))
+            {
+                continue;
+            }
+
+            Console.Write(current.ToString() + ", ");
+            traversalValues.Add(current);
+            List<Node> items = adjacencyList[current];
+            foreach (var item in items)
+            {
+                if (!traversalValues.Contains(item))
+                {
+                    queue.Enqueue(item);
+                }
+            }
+        }
     }
 
     internal class Sorting : IComparer<Node>
