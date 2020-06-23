@@ -8,6 +8,14 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
 
+            int[][] dungeon = new int[][]
+{
+new int[] { -2,-3,3 },
+new int[] {-5,-10,1},
+new int[] { 10,30,-5 }
+};
+            DungeonGame dungeonGame = new DungeonGame();
+            Console.WriteLine(dungeonGame.CalculateMinimumHP(dungeon));
             // Graph graph = new Graph();
 
             // graph.AddNode("A");
@@ -31,15 +39,15 @@ namespace DataStructures
 
             // Console.WriteLine(graph.HasCycle());
 
-            WeightedGraph weightedGraph = new WeightedGraph();
-            weightedGraph.AddNode("A");
-            weightedGraph.AddNode("B");
-            weightedGraph.AddNode("C");
+            // WeightedGraph weightedGraph = new WeightedGraph();
+            // weightedGraph.AddNode("A");
+            // weightedGraph.AddNode("B");
+            // weightedGraph.AddNode("C");
 
-            weightedGraph.AddEdge("A", "B", 10);
-            weightedGraph.AddEdge("A", "C", 20);
+            // weightedGraph.AddEdge("A", "B", 10);
+            // weightedGraph.AddEdge("A", "C", 20);
 
-            weightedGraph.Print();
+            // weightedGraph.Print();
         }
     }
 }
