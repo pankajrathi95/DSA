@@ -100,6 +100,41 @@ public class WeightedGraph
         }
     }
 
+    public bool HasCycle()
+    {
+        HashSet<Node> visited = new HashSet<Node>();
+
+        foreach (var node in nodes.Values)
+        {
+            if (!visited.Contains(node) && HasCycle(node, null, visited))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool HasCycle(Node node, Node parent, HashSet<Node> visited)
+    {
+        visited.Add(node);
+
+        foreach (var edge in node.GetEdges())
+        {
+            if (edge.to == parent)
+            {
+                continue;
+            }
+
+            if (visited.Contains(edge.to) || HasCycle(edge.to, node, visited))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private string NodePrint(List<Edge> values)
     {
         string value = "[ ";
