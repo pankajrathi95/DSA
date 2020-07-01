@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DataStructures
 {
@@ -8,14 +9,28 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
 
-            int[][] dungeon = new int[][]
-{
-new int[] { -2,-3,3 },
-new int[] {-5,-10,1},
-new int[] { 10,30,-5 }
-};
-            DungeonGame dungeonGame = new DungeonGame();
-            Console.WriteLine(dungeonGame.CalculateMinimumHP(dungeon));
+            List<List<string>> vals = new List<List<string>>();
+            List<string> one = new List<string>();
+            one.Add("MUC");
+            one.Add("LHR");
+            vals.Add(one);
+
+            List<string> two = new List<string>();
+            two.Add("JFK");
+            two.Add("MUC");
+            vals.Add(two);
+            List<string> three = new List<string>();
+            three.Add("SFO");
+            three.Add("SJC");
+            vals.Add(three);
+            List<string> four = new List<string>();
+            four.Add("LHR");
+            four.Add("SFO");
+            vals.Add(four);
+
+            ReconstructItinerary reconstructItinerary = new ReconstructItinerary();
+            reconstructItinerary.FindItinerary(vals);
+
             // Graph graph = new Graph();
 
             // graph.AddNode("A");
