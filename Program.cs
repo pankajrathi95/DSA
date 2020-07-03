@@ -9,27 +9,10 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
 
-            List<List<string>> vals = new List<List<string>>();
-            List<string> one = new List<string>();
-            one.Add("MUC");
-            one.Add("LHR");
-            vals.Add(one);
+            int[] cells = new int[] { 0, 1, 0, 1, 1, 0, 0, 1 };
 
-            List<string> two = new List<string>();
-            two.Add("JFK");
-            two.Add("MUC");
-            vals.Add(two);
-            List<string> three = new List<string>();
-            three.Add("SFO");
-            three.Add("SJC");
-            vals.Add(three);
-            List<string> four = new List<string>();
-            four.Add("LHR");
-            four.Add("SFO");
-            vals.Add(four);
-
-            ReconstructItinerary reconstructItinerary = new ReconstructItinerary();
-            reconstructItinerary.FindItinerary(vals);
+            PrisonCellsAfterNDays prison = new PrisonCellsAfterNDays();
+            prison.PrisonAfterNDays(cells, 7);
 
             // Graph graph = new Graph();
 
