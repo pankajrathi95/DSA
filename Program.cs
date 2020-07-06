@@ -9,10 +9,8 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
 
-            int[] cells = new int[] { 0, 1, 0, 1, 1, 0, 0, 1 };
-
-            PrisonCellsAfterNDays prison = new PrisonCellsAfterNDays();
-            prison.PrisonAfterNDays(cells, 7);
+            HammingDistance distance = new HammingDistance();
+            distance.FindHammingDistance(1, 4);
 
             // Graph graph = new Graph();
 
