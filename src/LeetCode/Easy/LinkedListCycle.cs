@@ -2,10 +2,6 @@
 https://leetcode.com/problems/linked-list-cycle/submissions/
 */
 
-/**
- * Definition for singly-linked list.
- * 
- */
 public class LinkedListCycle
 {
     public class ListNode
