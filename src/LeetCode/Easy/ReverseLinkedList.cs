@@ -1,5 +1,5 @@
 /*
-https://leetcode.com/problems/reverse-linked-list/submissions/
+https://leetcode.com/problems/reverse-linked-list/
 */
 
 public class ReverseLinkedList
