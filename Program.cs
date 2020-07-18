@@ -10,10 +10,8 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
 
-            SelectionSort bubbleSort = new SelectionSort();
-            int[] array = new int[] { 2, 5, 3, 1, 4 };
-            bubbleSort.Sort(array);
-            Console.WriteLine(String.Join(",", array.Select(p => p.ToString()).ToArray()));
+            TopKFrequentElements elements = new TopKFrequentElements();
+            int[] values = elements.TopKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2);
         }
     }
 }
