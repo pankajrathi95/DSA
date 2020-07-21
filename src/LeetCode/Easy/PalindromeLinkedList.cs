@@ -21,11 +21,6 @@ public class PalindromeLinkedList
         Stack<ListNode> stack = new Stack<ListNode>();
         while (fast != null)
         {
-            /*if (stack.Count != 0 && (fast.next == null || fast.next.next == null))
-            {
-                stack.Pop();
-                break;
-            }*/
             if (fast.next == null)
             {
                 slow = slow.next;
@@ -39,7 +34,7 @@ public class PalindromeLinkedList
 
         while (stack.Count != 0)
         {
-            if (stack.Pop() != slow)
+            if (stack.Pop().val != slow.val)
             {
                 return false;
             }
