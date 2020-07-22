@@ -4,7 +4,7 @@ https://leetcode.com/problems/missing-number/
 
 public class MissingNumber
 {
-    public int MissingNumber(int[] nums)
+    public int FindMissingNumber(int[] nums)
     {
         int[] counter = new int[nums.Length + 1];
         for (int i = 0; i < nums.Length; i++)
