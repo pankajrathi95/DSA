@@ -16,23 +16,31 @@ return its zigzag level order traversal as:
 ]
 */
 
-public class BinaryTreeZigzagLevelOrder {
-    public class TreeNode {
-      public int val;
-      public TreeNode left;
-      public TreeNode right;
-      public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
-          this.val = val;
-          this.left = left;
-          this.right = right;
-      }
-  }
-    public IList<IList<int>> ZigzagLevelOrder(TreeNode root) {
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class BinaryTreeZigzagLevelOrder
+{
+    public class TreeNode
+    {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
+        {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+    public IList<IList<int>> ZigzagLevelOrder(TreeNode root)
+    {
         if (root == null)
         {
-            return null;
+            return new List<IList<int>>();
         }
-        
+
         IList<IList<int>> result = new List<IList<int>>();
         Queue<TreeNode> queue = new Queue<TreeNode>();
         queue.Enqueue(root);
@@ -40,37 +48,41 @@ public class BinaryTreeZigzagLevelOrder {
         while (queue.Count != 0)
         {
             int size = queue.Count;
-            IList<int> currentLevel = new List<int>();
+            List<int> currentLevel = new List<int>();
             for (int i = 0; i < size; i++)
             {
                 var current = queue.Dequeue();
                 currentLevel.Add(current.val);
-                
+
                 if (current.left != null)
                 {
                     queue.Enqueue(current.left);
                 }
-                    
+
                 if (current.right != null)
                 {
                     queue.Enqueue(current.right);
                 }
             }
-            
+
             direction++;
             result.Add(currentLevel);
         }
-        
+
         for (int i = 0; i < result.Count; i++)
         {
             if (i % 2 != 0)
             {
-                Console.WriteLine(i + " " +result[i][0]);
-                result[i].Reverse();
-                Console.WriteLine(i + " " +result[i][0]);
+                Console.WriteLine(i + " " + result[i][0]);
+                //IList<int> abstractList;
+                var concreteList = new List<int>(result[i]);
+                concreteList.Reverse();
+                result[i] = concreteList;
+                Console.WriteLine(i + " " + result[i][0]);
+
             }
         }
-        
+
         return result;
     }
 }

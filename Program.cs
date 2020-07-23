@@ -10,10 +10,14 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
 
-            PalindromeLinkedList elements = new PalindromeLinkedList();
+            BinaryTreeZigzagLevelOrder.TreeNode root = new BinaryTreeZigzagLevelOrder.TreeNode(
+                3,
+                new BinaryTreeZigzagLevelOrder.TreeNode(9, new BinaryTreeZigzagLevelOrder.TreeNode(3, null, null), new BinaryTreeZigzagLevelOrder.TreeNode(4, null, null)),
+                new BinaryTreeZigzagLevelOrder.TreeNode(20, new BinaryTreeZigzagLevelOrder.TreeNode(15, null, null), new BinaryTreeZigzagLevelOrder.TreeNode(7, null, null))
+                    );
 
-            PalindromeLinkedList.ListNode listNode = new PalindromeLinkedList.ListNode(1, new PalindromeLinkedList.ListNode(2, new PalindromeLinkedList.ListNode(3, new PalindromeLinkedList.ListNode(2, new PalindromeLinkedList.ListNode(1, null)))));
-            bool x = elements.IsPalindrome(listNode);
+            BinaryTreeZigzagLevelOrder binary = new BinaryTreeZigzagLevelOrder();
+            binary.ZigzagLevelOrder(root);
         }
     }
 }
