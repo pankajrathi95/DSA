@@ -27,7 +27,7 @@ public class AddDigits
 
         if (sum >= 10)
         {
-            return AddDigits(sum);
+            return AddTheDigits(sum);
         }
 
         return sum;
