@@ -9,9 +9,10 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-
-            ValidPalindrome validPalindrome = new ValidPalindrome();
-            validPalindrome.IsPalindrome("A man, a plan, a canal: Panama");
+            int[] nums = new int[] { 5, 9, 1, 3, 6, 0 };
+            MergeSort merge = new MergeSort();
+            merge.Sort(nums);
+            Console.WriteLine(nums.ToList().ToString());
         }
     }
 }
