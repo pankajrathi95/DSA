@@ -10,8 +10,8 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!");
             int[] nums = new int[] { 5, 9, 1, 3, 6, 0 };
-            QuickSort merge = new QuickSort();
-            merge.Sort(nums);
+            CountingSort merge = new CountingSort();
+            merge.Sort(nums, 9);
             Console.WriteLine();
         }
     }
