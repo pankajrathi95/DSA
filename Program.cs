@@ -13,6 +13,9 @@ namespace DataStructures
             BucketSort merge = new BucketSort();
             merge.Sort(nums, 3);
             Console.WriteLine();
+
+            ClimibingStairs climibing = new ClimibingStairs();
+            Console.WriteLine(climibing.ClimbStairs(45));
         }
     }
 }
