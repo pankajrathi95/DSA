@@ -51,3 +51,5 @@ public class DesignHashSet
         return hashSet[key] == 1;
     }
 }
+
+/*need to do it using Hash functons */
