@@ -70,4 +70,26 @@ public class RemoveDuplicatesFromSortedArray
 
         return ++start;
     }
+
+    //Another solution
+    public int RemoveTheDuplicates(int[] nums)
+    {
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+
+        int slow = 0, fast = 0;
+        while (fast < nums.Length)
+        {
+            if (nums[slow] != nums[fast])
+            {
+                nums[++slow] = nums[fast];
+            }
+
+            fast++;
+        }
+
+        return slow + 1;
+    }
 }
