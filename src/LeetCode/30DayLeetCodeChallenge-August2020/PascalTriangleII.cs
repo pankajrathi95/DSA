@@ -27,7 +27,7 @@ public class PascalTriangleII
 
         for (int i = 2; i <= rowIndex; i++)
         {
-            List<int> prevRow = result[i - 1].ToList();
+            IList<int> prevRow = result[i - 1];
             IList<int> currentRow = new List<int>();
             currentRow.Add(1);
             for (int j = 1; j < prevRow.Count; j++)
