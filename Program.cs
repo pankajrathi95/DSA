@@ -8,7 +8,7 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!!");
             int[][] grid = new int[3][];
             grid[0] = new int[] { 2, 1, 1 };
             grid[1] = new int[] { 1, 1, 0 };
