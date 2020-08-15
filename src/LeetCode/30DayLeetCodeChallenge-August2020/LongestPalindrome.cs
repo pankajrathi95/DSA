@@ -38,7 +38,6 @@ public class LongestPalindrome
         }
 
         int result = 0;
-        bool seen = true;
         foreach (var kvp in values)
         {
             if (kvp.Value % 2 == 0)
