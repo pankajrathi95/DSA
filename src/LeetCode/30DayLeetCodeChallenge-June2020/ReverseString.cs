@@ -23,7 +23,7 @@ public class ReverseString
     {
         int start = 0, end = s.Length - 1;
 
-        while (start <= end)
+        while (start < end)
         {
             char temp = s[start];
             s[start] = s[end];
