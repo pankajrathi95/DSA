@@ -3,6 +3,7 @@ https://leetcode.com/problems/rotate-image/
 */
 public class RotateImage
 {
+    //To rotate the array we need to first reverse the matrix and then transpose the matrix.
     public void Rotate(int[][] matrix)
     {
         int end = matrix.Length - 1, start = 0;

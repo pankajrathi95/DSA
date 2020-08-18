@@ -32,30 +32,17 @@ public class BestTimetoBuyandSellStockIII
 {
     public int MaxProfit(int[] prices)
     {
-        int start = 0, end = start + 1, maxProfit = 0;
-        List<int> values = new List<int>();
-        while (end != prices.Length)
-        {
-            if (prices[end] - prices[start] > maxProfit)
-            {
-                maxProfit = prices[end] - prices[start];
-            }
-            else
-            {
-                values.Add(maxProfit);
-                maxProfit = 0;
-                start = end;
-            }
+        int firstBuy = int.MinValue, secondBuy = int.MinValue;
+        int firstSell = 0, secondSell = 0;
 
-            end++;
+        for (int i = 0; i < prices.Length; i++)
+        {
+            firstBuy = Math.Max(firstBuy, -prices[i]);
+            firstSell = Math.Max(firstSell, firstBuy + prices[i]);
+            secondBuy = Math.Max(secondBuy, firstSell - prices[i]);
+            secondSell = Math.Max(secondSell, secondBuy + prices[i]); ;
         }
 
-        values.Add(maxProfit);
-        values.Sort();
-        foreach (var item in values)
-        {
-            Console.WriteLine(item);
-        }
-        return values[values.Count - 2] + values[values.Count - 1];
+        return secondSell;
     }
 }
