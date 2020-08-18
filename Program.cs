@@ -13,8 +13,8 @@ namespace DataStructures
             // BestTimetoBuyandSellStockIII bestTimetoBuyandSell = new BestTimetoBuyandSellStockIII();
             // bestTimetoBuyandSell.MaxProfit(prices);
 
-            DistributeCandiestoPeople candiestoPeople = new DistributeCandiestoPeople();
-            candiestoPeople.DistributeCandies(80, 4);
+            CountAndSay andSay = new CountAndSay();
+            Console.WriteLine(andSay.CountAndSayIt(5));
         }
     }
 }
