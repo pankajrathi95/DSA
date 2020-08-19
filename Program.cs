@@ -13,8 +13,8 @@ namespace DataStructures
             // BestTimetoBuyandSellStockIII bestTimetoBuyandSell = new BestTimetoBuyandSellStockIII();
             // bestTimetoBuyandSell.MaxProfit(prices);
 
-            CountAndSay andSay = new CountAndSay();
-            Console.WriteLine(andSay.CountAndSayIt(5));
+            NumbersWithSameConsecutiveDifferences consecutiveDifferences = new NumbersWithSameConsecutiveDifferences();
+            consecutiveDifferences.NumsSameConsecDiff(3, 7);
         }
     }
 }
