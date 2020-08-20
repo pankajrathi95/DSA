@@ -9,12 +9,15 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!!");
-            // int[] prices = new int[] { 1, 2, 4, 2, 5, 7, 2, 4, 9, 0 };
-            // BestTimetoBuyandSellStockIII bestTimetoBuyandSell = new BestTimetoBuyandSellStockIII();
-            // bestTimetoBuyandSell.MaxProfit(prices);
 
-            NumbersWithSameConsecutiveDifferences consecutiveDifferences = new NumbersWithSameConsecutiveDifferences();
-            consecutiveDifferences.NumsSameConsecDiff(3, 7);
+            Console.WriteLine(IsUnique.IsUniqueOrNot("pankaj"));
+
+            Console.WriteLine(IsUnique.IsUniqueOrNot("a"));
+
+            //Console.WriteLine(IsUnique.IsUniqueOrNot(""));
+            Console.WriteLine(IsUnique.IsUniqueOrNot("qwertyuopm"));
+            Console.WriteLine(IsUnique.IsUniqueOrNot("213124"));
+
         }
     }
 }
