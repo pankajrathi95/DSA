@@ -10,13 +10,13 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
-            Console.WriteLine(IsUnique.IsUniqueOrNot("pankaj"));
+            Console.WriteLine(CheckPermutation.CheckIfPermutation("pankaj", "pankaf"));
 
-            Console.WriteLine(IsUnique.IsUniqueOrNot("a"));
+            Console.WriteLine(CheckPermutation.CheckIfPermutation("a", "ab"));
 
             //Console.WriteLine(IsUnique.IsUniqueOrNot(""));
-            Console.WriteLine(IsUnique.IsUniqueOrNot("qwertyuopm"));
-            Console.WriteLine(IsUnique.IsUniqueOrNot("213124"));
+            Console.WriteLine(CheckPermutation.CheckIfPermutation("qwertyuopm", "qweroyutpm"));
+            Console.WriteLine(CheckPermutation.CheckIfPermutation("213124", "dasdasd"));
 
         }
     }
