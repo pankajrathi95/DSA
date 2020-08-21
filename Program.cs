@@ -22,10 +22,10 @@ namespace DataStructures
             // ReorderList reorderList = new ReorderList();
             // reorderList.ReorderTheList(head);
             int[][] matrix = new int[3][];
-            matrix[0] = new int[] { 0, 1, 2 };
-            matrix[1] = new int[] { 3, 4, 5 };
+            matrix[0] = new int[] { 1, 1, 2 };
+            matrix[1] = new int[] { 3, 0, 5 };
             matrix[2] = new int[] { 6, 7, 8 };
-            Console.WriteLine(RotateMatrix.RotateTheMatrix(matrix));
+            Console.WriteLine(ZeroMatrix.SetZeroMatrix(matrix));
 
         }
     }
