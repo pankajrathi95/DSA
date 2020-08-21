@@ -22,7 +22,10 @@ namespace DataStructures
             // ReorderList reorderList = new ReorderList();
             // reorderList.ReorderTheList(head);
 
-            Console.WriteLine(PalindromePermutation.CheckPalindrome("tact coap"));
+            Console.WriteLine(OneAway.FindIfOneWay("pale", "ple"));
+            Console.WriteLine(OneAway.FindIfOneWay("pales", "pale"));
+            Console.WriteLine(OneAway.FindIfOneWay("pale", "bale"));
+            Console.WriteLine(OneAway.FindIfOneWay("pake", "bake"));
         }
     }
 }
