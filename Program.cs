@@ -9,6 +9,10 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!!");
+
+            ThreeSum threeSum = new ThreeSum();
+            threeSum.Sum(new int[] { -1, 0, 1, 2, -1, 4 });
+
             // ReorderList.ListNode head =
             // new ReorderList.ListNode(1,
             // new ReorderList.ListNode(2,
@@ -35,15 +39,7 @@ namespace DataStructures
             // characters.Query('a');
             // characters.Query('a');
 
-            SumofLeafNodes.TreeNode root = new SumofLeafNodes.TreeNode(5,
-            new SumofLeafNodes.TreeNode(10),
-            new SumofLeafNodes.TreeNode(15,
-            new SumofLeafNodes.TreeNode(20,
-            new SumofLeafNodes.TreeNode(40),
-            new SumofLeafNodes.TreeNode(50)),
-            new SumofLeafNodes.TreeNode(30)));
-            SumofLeafNodes leafNodes = new SumofLeafNodes();
-            leafNodes.SumOfLeftLeaves(root);
+
         }
     }
 }
