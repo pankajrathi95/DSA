@@ -9,13 +9,12 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!!");
-            DeleteNodeinBST.TreeNode left = new DeleteNodeinBST.TreeNode(3, new DeleteNodeinBST.TreeNode(2), new DeleteNodeinBST.TreeNode(4));
-            DeleteNodeinBST.TreeNode right = new DeleteNodeinBST.TreeNode(6, null, new DeleteNodeinBST.TreeNode(7));
+            DeleteMiddleNode.ListNode head = new DeleteMiddleNode.ListNode(1);
+            head.next = new DeleteMiddleNode.ListNode(5);
+            head.next.next = new DeleteMiddleNode.ListNode(9);
+            head.next.next.next = new DeleteMiddleNode.ListNode(12);
 
-            DeleteNodeinBST.TreeNode root = new DeleteNodeinBST.TreeNode(5, left, right);
-
-            DeleteNodeinBST bST = new DeleteNodeinBST();
-            bST.DeleteNode(root, 3);
+            DeleteMiddleNode.DeleteNode(head.next, head);
         }
     }
 }
