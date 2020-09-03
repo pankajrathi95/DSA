@@ -10,17 +10,18 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
-            StackMin stackMin = new StackMin(10);
-            stackMin.Push(11);
-            Console.WriteLine(stackMin.Min());
-            stackMin.Push(5);
-            Console.WriteLine(stackMin.Min());
-            stackMin.Push(9);
-            Console.WriteLine(stackMin.Min());
-            stackMin.Pop();
-            Console.WriteLine(stackMin.Min());
-            stackMin.Pop();
-            Console.WriteLine(stackMin.Min());
+            StackofPlates stackofPlates = new StackofPlates(3);
+            stackofPlates.Push(1);
+            stackofPlates.Push(2);
+            stackofPlates.Push(3);
+            stackofPlates.Push(4);
+            stackofPlates.PopAt(1);
+            stackofPlates.PopAt(1);
+            stackofPlates.PopAt(5);
+            Console.WriteLine(stackofPlates.Pop());
+            Console.WriteLine(stackofPlates.Pop());
+            Console.WriteLine(stackofPlates.Pop());
+            Console.WriteLine(stackofPlates.Pop());
         }
     }
 }
