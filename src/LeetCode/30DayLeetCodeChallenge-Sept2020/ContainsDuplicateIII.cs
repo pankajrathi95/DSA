@@ -15,6 +15,8 @@ Input: nums = [1,5,9,1,5,9], k = 2, t = 3
 Output: false
 */
 
+using System;
+
 public class ContainsDuplicateIII
 {
     public bool ContainsNearbyAlmostDuplicate(int[] nums, int k, int t)
