@@ -10,23 +10,23 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
-            QueueviaStacks queueviaStacks = new QueueviaStacks();
+            SortStack SortStack = new SortStack();
 
-            queueviaStacks.Enqueue(1);
-            queueviaStacks.Enqueue(2);
-            queueviaStacks.Enqueue(3);
-            queueviaStacks.Enqueue(4);
-            queueviaStacks.Enqueue(5);
-            queueviaStacks.Enqueue(6);
+            SortStack.Push(1);
+            SortStack.Push(2);
+            SortStack.Push(3);
+            SortStack.Push(4);
+            SortStack.Push(5);
+            SortStack.Push(6);
 
-            Console.WriteLine(queueviaStacks.Dequeue());
+            Console.WriteLine(SortStack.Pop());
 
-            Console.WriteLine(queueviaStacks.Dequeue());
-            Console.WriteLine(queueviaStacks.Dequeue());
-            Console.WriteLine(queueviaStacks.Dequeue());
-            Console.WriteLine(queueviaStacks.Dequeue());
-            Console.WriteLine(queueviaStacks.Dequeue());
-            Console.WriteLine(queueviaStacks.Dequeue());
+            Console.WriteLine(SortStack.Pop());
+            Console.WriteLine(SortStack.Pop());
+            Console.WriteLine(SortStack.Pop());
+            Console.WriteLine(SortStack.Pop());
+            Console.WriteLine(SortStack.Pop());
+            Console.WriteLine(SortStack.Pop());
         }
     }
 }
