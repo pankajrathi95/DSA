@@ -10,8 +10,17 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
-            LargestTimeForGivenDigits digits = new LargestTimeForGivenDigits();
-            digits.LargestTimeFromDigits(new int[] { 2, 0, 6, 6 });
+            StackMin stackMin = new StackMin(10);
+            stackMin.Push(11);
+            Console.WriteLine(stackMin.Min());
+            stackMin.Push(5);
+            Console.WriteLine(stackMin.Min());
+            stackMin.Push(9);
+            Console.WriteLine(stackMin.Min());
+            stackMin.Pop();
+            Console.WriteLine(stackMin.Min());
+            stackMin.Pop();
+            Console.WriteLine(stackMin.Min());
         }
     }
 }
