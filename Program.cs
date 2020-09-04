@@ -10,23 +10,27 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
-            SortStack SortStack = new SortStack();
+            AnimalQueue animalQueue = new AnimalQueue();
+            animalQueue.Enqueue(new Cat("c1"));
+            animalQueue.Enqueue(new Cat("c2"));
+            animalQueue.Enqueue(new Dog("d1"));
+            animalQueue.Enqueue(new Dog("d2"));
+            animalQueue.Enqueue(new Cat("c3"));
+            animalQueue.Enqueue(new Dog("d3"));
 
-            SortStack.Push(1);
-            SortStack.Push(2);
-            SortStack.Push(3);
-            SortStack.Push(4);
-            SortStack.Push(5);
-            SortStack.Push(6);
+            Console.WriteLine(animalQueue.DequeueAny().ToString());
+            Console.WriteLine(animalQueue.DequeueAny().ToString());
+            Console.WriteLine(animalQueue.DequeueAny().ToString());
+            Console.WriteLine(animalQueue.DequeueAny().ToString());
 
-            Console.WriteLine(SortStack.Pop());
+            Console.WriteLine(animalQueue.DequeueCat().ToString());
+            Console.WriteLine(animalQueue.DequeueDog().ToString());
 
-            Console.WriteLine(SortStack.Pop());
-            Console.WriteLine(SortStack.Pop());
-            Console.WriteLine(SortStack.Pop());
-            Console.WriteLine(SortStack.Pop());
-            Console.WriteLine(SortStack.Pop());
-            Console.WriteLine(SortStack.Pop());
+            Console.WriteLine(animalQueue.DequeueAny());
+            Console.WriteLine(animalQueue.DequeueAny());
+
+            Console.WriteLine(animalQueue.DequeueCat());
+            Console.WriteLine(animalQueue.DequeueDog());
         }
     }
 }

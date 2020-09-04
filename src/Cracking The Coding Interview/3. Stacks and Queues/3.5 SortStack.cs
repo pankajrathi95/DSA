@@ -67,4 +67,24 @@ public class SortStack
     {
         return main.Count == 0;
     }
+
+    public void Sort(Stack<int> main)
+    {
+        Stack<int> s = new Stack<int>();
+        while (main.Count != 0)
+        {
+            int temp = main.Pop();
+            while (s.Count != 0 && s.Peek() > temp)
+            {
+                main.Push(s.Pop());
+            }
+
+            s.Push(temp);
+        }
+
+        while (s.Count != 0)
+        {
+            main.Push(s.Pop());
+        }
+    }
 }
