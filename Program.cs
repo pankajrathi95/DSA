@@ -10,8 +10,20 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
-            MinimalTree minimalTree = new MinimalTree();
-            minimalTree.FindMinimalTree(new int[] { 1, 2, 3, 4, 5, 6 });
+            ListofDepths.TreeNode left1 = new ListofDepths.TreeNode(4);
+            ListofDepths.TreeNode right1 = new ListofDepths.TreeNode(5);
+
+            ListofDepths.TreeNode left2 = new ListofDepths.TreeNode(6, new ListofDepths.TreeNode(7));
+            //ListofDepths.TreeNode right2 = new ListofDepths.TreeNode(7);
+
+            ListofDepths.TreeNode left = new ListofDepths.TreeNode(2, left1, right1);
+            ListofDepths.TreeNode right = new ListofDepths.TreeNode(3, left2);
+
+            ListofDepths.TreeNode root = new ListofDepths.TreeNode(1, left, right);
+
+            ListofDepths listofDepths = new ListofDepths();
+            listofDepths.NodesatDepth(root);
+
         }
     }
 }
