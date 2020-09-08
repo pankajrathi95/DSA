@@ -20,7 +20,7 @@ public class MinimalTree
 
     private TreeNode CreateMinimalTree(int[] arr, int start, int end)
     {
-        if (end < start)
+        if (start > end)
         {
             return null;
         }
