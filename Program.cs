@@ -10,6 +10,9 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
+            BullsandCows bullsandCows = new BullsandCows();
+            bullsandCows.GetHint("1121", "1221");
+
             SumofRootToLeafBinaryNumbers.TreeNode root = new SumofRootToLeafBinaryNumbers.TreeNode(1, null, new SumofRootToLeafBinaryNumbers.TreeNode(0));
 
             SumofRootToLeafBinaryNumbers sumofRootToLeafBinaryNumbers = new SumofRootToLeafBinaryNumbers();
