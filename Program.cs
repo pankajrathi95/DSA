@@ -10,6 +10,9 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
+            CombinationSumIII combinationSumIII = new CombinationSumIII();
+            combinationSumIII.CombinationSum3(3, 7);
+
             BullsandCows bullsandCows = new BullsandCows();
             bullsandCows.GetHint("1121", "1221");
 
