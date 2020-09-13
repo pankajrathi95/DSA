@@ -10,6 +10,13 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
+            InsertInterval insertInterval = new InsertInterval();
+            int[][] input = new int[2][];
+            input[0] = new int[] { 1, 3 };
+            input[1] = new int[] { 6, 9 };
+
+            insertInterval.Insert(input, new int[] { 2, 5 });
+
             CombinationSumIII combinationSumIII = new CombinationSumIII();
             combinationSumIII.CombinationSum3(3, 7);
 
@@ -35,7 +42,7 @@ namespace DataStructures
             // ListofDepths listofDepths = new ListofDepths();
             // listofDepths.NodesatDepth(root);
 
-
+            Successor.TreeNode rot = new Successor.TreeNode(4);
 
         }
     }

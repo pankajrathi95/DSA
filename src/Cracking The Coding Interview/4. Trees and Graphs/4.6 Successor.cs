@@ -7,13 +7,14 @@ public class Successor
         public int val;
         public TreeNode left;
         public TreeNode right;
-        internal TreeNode parent;
+        public TreeNode parent;
 
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
+        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null, TreeNode parent = null)
         {
             this.val = val;
             this.left = left;
             this.right = right;
+            this.parent = parent;
         }
     }
 
