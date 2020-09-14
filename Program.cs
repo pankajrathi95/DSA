@@ -10,23 +10,27 @@ namespace DataStructures
         {
             Console.WriteLine("Hello World!!");
 
-            InsertInterval insertInterval = new InsertInterval();
-            int[][] input = new int[2][];
-            input[0] = new int[] { 1, 3 };
-            input[1] = new int[] { 6, 9 };
 
-            insertInterval.Insert(input, new int[] { 2, 5 });
+            BSTSequences bSTSequences = new BSTSequences();
+            BSTSequences.TreeNode root = new BSTSequences.TreeNode(2, new BSTSequences.TreeNode(1), new BSTSequences.TreeNode(3));
+            bSTSequences.FindSequences(root);
+            // InsertInterval insertInterval = new InsertInterval();
+            // int[][] input = new int[2][];
+            // input[0] = new int[] { 1, 3 };
+            // input[1] = new int[] { 6, 9 };
 
-            CombinationSumIII combinationSumIII = new CombinationSumIII();
-            combinationSumIII.CombinationSum3(3, 7);
+            // insertInterval.Insert(input, new int[] { 2, 5 });
 
-            BullsandCows bullsandCows = new BullsandCows();
-            bullsandCows.GetHint("1121", "1221");
+            // CombinationSumIII combinationSumIII = new CombinationSumIII();
+            // combinationSumIII.CombinationSum3(3, 7);
 
-            SumofRootToLeafBinaryNumbers.TreeNode root = new SumofRootToLeafBinaryNumbers.TreeNode(1, null, new SumofRootToLeafBinaryNumbers.TreeNode(0));
+            // BullsandCows bullsandCows = new BullsandCows();
+            // bullsandCows.GetHint("1121", "1221");
 
-            SumofRootToLeafBinaryNumbers sumofRootToLeafBinaryNumbers = new SumofRootToLeafBinaryNumbers();
-            sumofRootToLeafBinaryNumbers.SumRootToLeaf(root);
+            // SumofRootToLeafBinaryNumbers.TreeNode root = new SumofRootToLeafBinaryNumbers.TreeNode(1, null, new SumofRootToLeafBinaryNumbers.TreeNode(0));
+
+            // SumofRootToLeafBinaryNumbers sumofRootToLeafBinaryNumbers = new SumofRootToLeafBinaryNumbers();
+            // sumofRootToLeafBinaryNumbers.SumRootToLeaf(root);
 
             // ListofDepths.TreeNode left1 = new ListofDepths.TreeNode(4);
             // ListofDepths.TreeNode right1 = new ListofDepths.TreeNode(5);
