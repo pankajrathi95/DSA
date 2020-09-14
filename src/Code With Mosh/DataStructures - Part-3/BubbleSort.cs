@@ -1,16 +1,19 @@
-public class BubbleSort
+namespace DataStructures
 {
-    public void Sort(int[] array)
+    public class BubbleSort
     {
-        for (int i = 0; i < array.Length; i++)
+        public void Sort(int[] array)
         {
-            for (int j = 0; j < array.Length - i - 1; j++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (array[j] > array[j + 1])
+                for (int j = 0; j < array.Length - i - 1; j++)
                 {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    if (array[j] > array[j + 1])
+                    {
+                        int temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
                 }
             }
         }
