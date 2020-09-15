@@ -9,12 +9,12 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!!");
-            PathWithSum.TreeNode left = new PathWithSum.TreeNode(5, new PathWithSum.TreeNode(3, new PathWithSum.TreeNode(3), new PathWithSum.TreeNode(-2)), new PathWithSum.TreeNode(2, null, new PathWithSum.TreeNode(1)));
-            PathWithSum.TreeNode right = new PathWithSum.TreeNode(-3, null, new PathWithSum.TreeNode(11));
-            PathWithSum.TreeNode root = new PathWithSum.TreeNode(10, left, right);
+            PathSumII.TreeNode left = new PathSumII.TreeNode(5, new PathSumII.TreeNode(3, new PathSumII.TreeNode(3), new PathSumII.TreeNode(-2)), new PathSumII.TreeNode(2, null, new PathSumII.TreeNode(1)));
+            PathSumII.TreeNode right = new PathSumII.TreeNode(-3, null, new PathSumII.TreeNode(11));
+            PathSumII.TreeNode root = new PathSumII.TreeNode(10, left, right);
 
-            PathWithSum.TreeNode root1 = new PathWithSum.TreeNode(1, null, new PathWithSum.TreeNode(2, null, new PathWithSum.TreeNode(3, null, new PathWithSum.TreeNode(4, null, new PathWithSum.TreeNode(5)))));
-            PathWithSum pathWithSum = new PathWithSum();
+            PathSumII.TreeNode root1 = new PathSumII.TreeNode(1, null, new PathSumII.TreeNode(2, null, new PathSumII.TreeNode(3, null, new PathSumII.TreeNode(4, null, new PathSumII.TreeNode(5)))));
+            PathSumII pathWithSum = new PathSumII();
             pathWithSum.PathSum(root1, 3);
         }
     }
