@@ -44,7 +44,6 @@ public class PathSumII
     IList<IList<int>> result = new List<IList<int>>();
     public IList<IList<int>> PathSum(TreeNode root, int sum)
     {
-
         if (root == null)
         {
             return result;
@@ -77,11 +76,10 @@ public class PathSumII
             FindPathSum(root.left, totalSum, currentSum + root.left.val, currentNodes);
         }
 
-
-
         if (root.right != null)
         {
             FindPathSum(root.right, totalSum, currentSum + root.right.val, currentNodes);
+            //we can also pass a new list always with a copy of current node. ( new List<int>(currentNodes);) then we dont need to rmeove the last element always and no need to create a new temp while adding it to result.
         }
 
         currentNodes.RemoveAt(currentNodes.Count - 1);
