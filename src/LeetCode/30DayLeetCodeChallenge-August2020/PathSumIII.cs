@@ -41,6 +41,7 @@ public class PathSumIII
             this.right = right;
         }
     }
+    int count = 0;
     public int PathSum(TreeNode root, int sum)
     {
         if (root == null)
@@ -48,25 +49,34 @@ public class PathSumIII
             return 0;
         }
 
-        return PathSum(root.left, sum) + PathSum_a(root, sum) + PathSum(root.right, sum);
+        FindPathSum(root, sum, root.val);
+        PathSum(root.left, sum);
+        PathSum(root.right, sum);
+
+        return count;
     }
 
-    private int PathSum_a(TreeNode root, int sum)
+    private void FindPathSum(TreeNode root, int totalSum, int currentSum)
     {
         if (root == null)
         {
-            return 0;
+            return;
         }
 
-        int res = 0;
-        if (root.val == sum)
+
+        if (currentSum == totalSum)
         {
-            res++;
+            count += 1;
         }
 
-        res += PathSum_a(root.left, sum - root.val);
-        res += PathSum_a(root.right, sum - root.val);
+        if (root.left != null)
+        {
+            FindPathSum(root.left, totalSum, currentSum + root.left.val);
+        }
 
-        return res;
+        if (root.right != null)
+        {
+            FindPathSum(root.right, totalSum, currentSum + root.right.val);
+        }
     }
 }
