@@ -4,7 +4,7 @@ public class MagicIndex
 {
     public int FindMagicIndex(int[] arr)
     {
-        ret urn FindMagicIndex(arr, 0, arr.Length - 1);
+        return FindMagicIndex(arr, 0, arr.Length - 1);
     }
 
     private int FindMagicIndex(int[] arr, int start, int end)
