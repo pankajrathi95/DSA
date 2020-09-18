@@ -19,7 +19,7 @@ public class CheckPermutation
         for (int i = 0; i < s2.Length; i++)
         {
             values[s2[i]]--;
-            if (values[s2[i]] != 0)
+            if (values[s2[i]] == -1)
             {
                 return false;
             }
