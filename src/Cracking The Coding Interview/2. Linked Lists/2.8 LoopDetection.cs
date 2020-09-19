@@ -20,22 +20,34 @@ public class LoopDetection
         }
     }
 
-    public static bool IsLoop(ListNode head)
+    public static ListNode IsLoop(ListNode head)
     {
-        var slow = head;
-        var fast = head.next;
-
-        while (fast.next != null && fast.next.next != null)
+        if (head == null)
         {
-            if (slow == fast)
-            {
-                return true;
-            }
-
-            slow = slow.next;
-            fast = fast.next.next;
+            return null;
         }
 
-        return false;
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast)
+            {
+                slow = head;
+                while (true)
+                {
+                    if (slow == fast)
+                    {
+                        return slow;
+                    }
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+            }
+        }
+
+        return null;
     }
 }
