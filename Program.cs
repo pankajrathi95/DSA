@@ -14,9 +14,8 @@ namespace DataStructures
             watch.Start();
             //start here
 
-            RecursiveMultiply recursiveMultiply = new RecursiveMultiply();
-            Console.WriteLine(recursiveMultiply.Multiply(8, 6));
-
+            SequentialDigits sequentialDigits = new SequentialDigits();
+            sequentialDigits.FindtheSequence(100, 300);
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
