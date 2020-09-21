@@ -14,6 +14,8 @@ namespace DataStructures
             watch.Start();
             //start here
 
+            PermutationwithoutDups permutationwithoutDups = new PermutationwithoutDups();
+            permutationwithoutDups.FindPermutation("abcd");
 
             //end here
             watch.Stop();
