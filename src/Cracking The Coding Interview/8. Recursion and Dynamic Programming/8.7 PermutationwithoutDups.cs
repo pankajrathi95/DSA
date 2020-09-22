@@ -27,4 +27,27 @@ public class PermutationwithoutDups
 
         return result;
     }
+
+    public List<string> FindPer_Rec(string str)
+    {
+        List<string> permutation = new List<string>();
+        if (str.Length == 0)
+        {
+            permutation.Add("");
+            return permutation;
+        }
+
+        char ch = str[0];
+        string remainder = str.Substring(1);
+        List<string> words = FindPer_Rec(remainder);
+        foreach (var word in words)
+        {
+            for (int k = 0; k < word.Length + 1; k++)
+            {
+                permutation.Add(word.Substring(0, k) + ch + word.Substring(k));
+            }
+        }
+
+        return permutation;
+    }
 }
