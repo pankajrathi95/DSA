@@ -28,37 +28,26 @@ public class FloodFill
 {
     public int[][] FloodFillIt(int[][] image, int sr, int sc, int newColor)
     {
-        int oldColor = image[sr][sc];
-
-        if (oldColor == newColor)
+        if (image[sr][sc] != newColor)
         {
-            return image;
+            FloodFillIt(image, sr, sc, newColor, image[sr][sc]);
         }
 
-        FillColor(image, sr, sc, oldColor, newColor);
         return image;
     }
 
-    private void FillColor(int[][] image, int i, int j, int oldColor, int newColor)
+    private void FloodFillIt(int[][] image, int i, int j, int newColor, int oldColor)
     {
-        //base condition
-        if (i < 0 || j < 0 || i >= image.Length || j >= image[0].Length)
+        if (i < 0 || j < 0 || i >= image.Length || j >= image[i].Length || image[i][j] != oldColor)
         {
             return;
         }
 
-        if (image[i][j] == oldColor)
-        {
-            image[i][j] = newColor;
-        }
-        else
-        {
-            return;
-        }
+        image[i][j] = newColor;
 
-        FillColor(image, i + 1, j, oldColor, newColor);
-        FillColor(image, i - 1, j, oldColor, newColor);
-        FillColor(image, i, j + 1, oldColor, newColor);
-        FillColor(image, i, j - 1, oldColor, newColor);
+        FloodFillIt(image, i + 1, j, newColor, oldColor);
+        FloodFillIt(image, i - 1, j, newColor, oldColor);
+        FloodFillIt(image, i, j + 1, newColor, oldColor);
+        FloodFillIt(image, i, j - 1, newColor, oldColor);
     }
 }
