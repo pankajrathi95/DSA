@@ -1,6 +1,7 @@
 /*
 https://leetcode.com/problems/n-queens/
 */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
