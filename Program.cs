@@ -13,8 +13,8 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here
-            Coins coins = new Coins();
-            coins.Change(55, new int[] { });
+            EightQueens eightQueens = new EightQueens();
+            eightQueens.Queen(4);
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
