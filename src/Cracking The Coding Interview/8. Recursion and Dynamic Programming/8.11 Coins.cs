@@ -1,6 +1,5 @@
 public class Coins
 {
-    int count = 0;
     public int Change(int amount, int[] coins)
     {
         int[][] dp = new int[coins.Length + 1][];
