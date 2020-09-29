@@ -67,4 +67,29 @@ public class BinaryTreeMaxPathSum
         sum = node.val + Math.Max(0, Math.Max(left, right));
         return sum;
     }
+
+    //another solution
+    int res = int.MinValue;
+    public int MaxPathSums(TreeNode root)
+    {
+        Solve(root);
+        return res;
+    }
+
+    private int Solve(TreeNode root)
+    {
+        if (root == null)
+        {
+            return 0;
+        }
+
+        int left = Solve(root.left);
+        int right = Solve(root.right);
+
+        int temp = Math.Max(Math.Max(left, right) + root.val, root.val);
+        int ans = Math.Max(temp, left + right + root.val);
+        res = Math.Max(res, ans);
+
+        return temp;
+    }
 }
