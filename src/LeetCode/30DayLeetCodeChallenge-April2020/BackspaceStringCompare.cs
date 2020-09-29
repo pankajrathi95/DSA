@@ -1,4 +1,6 @@
 /*
+#844 - https://leetcode.com/problems/backspace-string-compare/
+
 Given two strings S and T, return if they are equal when both are typed into empty text editors. # means a backspace character.
 
 Example 1:
@@ -25,7 +27,7 @@ Explanation: S becomes "c" while T becomes "b".
 */
 
 using System;
-using System.Collections;
+using System.Collections.Generic;
 
 public class BackspaceStringCompare
 {
@@ -36,29 +38,19 @@ public class BackspaceStringCompare
 
     public string Evaluate(string str)
     {
-        Stack myStack = new Stack();
-        foreach (char ch in str)
+        Stack<char> stack = new Stack<char>();
+        foreach (var ch in str)
         {
-            if (ch == '#' && myStack.Count != 0)
+            if (ch == '#' && stack.Count != 0)
             {
-                myStack.Pop();
+                stack.Pop();
             }
-            else
+            else if (ch != '#')
             {
-                myStack.Push(ch);
+                stack.Push(ch);
             }
         }
 
-        object[] objectArray = myStack.ToArray();
-        string newString = string.Empty;
-        foreach (object o in objectArray)
-        {
-            if ((char)o != '#')
-            {
-                newString += (char)o;
-            }
-        }
-
-        return newString;
+        return new String(stack.ToArray());
     }
 }

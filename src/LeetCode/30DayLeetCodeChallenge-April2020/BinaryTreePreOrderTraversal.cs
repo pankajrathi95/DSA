@@ -1,4 +1,6 @@
-/*Return the root node of a binary search tree that matches the given preorder traversal.
+/*
+#1008 - https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
+Return the root node of a binary search tree that matches the given preorder traversal.
 
 (Recall that a binary search tree is a binary tree where for every node, any descendant of node.left has a value < node.val, and any descendant of node.right has a value > node.val.  Also recall that a preorder traversal displays the value of the node first, then traverses node.left, then traverses node.right.)
 
@@ -36,40 +38,81 @@ public class BinaryTreePreOrderTraversal
         public TreeNode right;
         public TreeNode(int x) { val = x; }
     }
-    public class Index
-    {
-        public int index = 0;
-    }
 
-    public TreeNode BstFromPreorder(int[] preorder, Index index, int key, int min, int max, int size)
-    {
-        if (index.index >= size)
-        {
-            return null;
-        }
-        TreeNode root = null;
-        if (key > min && key < max)
-        {
-            root = new TreeNode(key);
-            index.index++;
-            if (index.index < size)
-            {
-                root.left = BstFromPreorder(preorder, index, preorder[index.index], min, key, size);
-            }
-            if (index.index < size)
-            {
-                root.right = BstFromPreorder(preorder, index, preorder[index.index], key, max, size);
-            }
-        }
-        return root;
-
-    }
+    //Recursive Appraoch
     public TreeNode BstFromPreorder(int[] preorder)
     {
-        if (preorder.Length == 0)
-            return null;
-        Index index = new Index();
-        return BstFromPreorder(preorder, index, preorder[0], int.MinValue, int.MaxValue, preorder.Length);
+        TreeNode root = null;
+        foreach (var item in preorder)
+        {
+            root = Dfs(root, item);
+        }
 
+        return root;
     }
+
+    private TreeNode Dfs(TreeNode root, int ele)
+    {
+        if (root == null)
+        {
+            return root = new TreeNode(ele);
+        }
+
+        if (root.val > ele)
+        {
+            root.left = Dfs(root.left, ele);
+        }
+        else
+        {
+            root.right = Dfs(root.right, ele);
+        }
+
+        return root;
+    }
+
+    //Iterative Approach
+    TreeNode root = null;
+    public TreeNode BstFromPreorderr(int[] preorder)
+    {
+        if (preorder.Length == 0 || preorder == null)
+        {
+            return null;
+        }
+        root = new TreeNode(preorder[0]);
+        for (int i = 1; i < preorder.Length; i++)
+        {
+            AddNode(preorder[i]);
+        }
+
+        return root;
+    }
+
+    private void AddNode(int value)
+    {
+        var current = root;
+        while (true)
+        {
+            if (value > current.val)
+            {
+                if (current.right == null)
+                {
+                    current.right = new TreeNode(value);
+                    break;
+                }
+
+                current = current.right;
+            }
+            else
+            {
+                if (current.left == null)
+                {
+                    current.left = new TreeNode(value);
+                    break;
+                }
+
+                current = current.left;
+            }
+        }
+    }
+
 }

@@ -1,4 +1,5 @@
 /*
+#121 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 Say you have an array for which the ith element is the price of a given stock on day i.
 
 Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
@@ -26,44 +27,20 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 */
 
+using System;
+
 public class BuyAndSellStock
 {
     public int MaxProfit(int[] prices)
     {
-        int profit = 0;
-        if (prices.Length == 0)
+        int buy = int.MaxValue;
+        int maxProfit = 0;
+        for (int i = 0; i < prices.Length; i++)
         {
-            return 0;
-        }
-        int start = prices[0];
-        int end = prices[0];
-        for (int i = 1; i < prices.Length; i++)
-        {
-
-            if (end <= prices[i])
-            {
-                end = prices[i];
-            }
-
-            else
-            {
-                profit = profit + (end - start);
-                start = end = prices[i];
-            }
-
-            if (start > prices[i] && end > prices[i])
-            {
-                start = end = prices[i];
-            }
-
-
-
-            if (i == prices.Length - 1 && end <= prices[i])
-            {
-                profit = profit + (end - start);
-            }
+            buy = Math.Min(buy, prices[i]);
+            maxProfit = Math.Max(maxProfit, prices[i] - buy);
         }
 
-        return profit;
+        return maxProfit;
     }
 }
