@@ -13,7 +13,7 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here
-            Observer.GrapStocks.Run();
+            EnemyClient.Run();
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
