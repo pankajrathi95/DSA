@@ -44,7 +44,7 @@ using System.Collections.Generic;
 
 public class CombinationSum
 {
-    public IList<IList<int>> CombinationSum(int[] candidates, int target)
+    public IList<IList<int>> FindCombinationSum(int[] candidates, int target)
     {
         if (candidates == null)
         {
