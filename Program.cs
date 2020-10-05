@@ -11,7 +11,12 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here
-            SingletonClient.Run();
+
+
+
+
+
+
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
