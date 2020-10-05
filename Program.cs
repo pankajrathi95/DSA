@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using Prototype;
 
 namespace DataStructures
 {
@@ -12,7 +13,7 @@ namespace DataStructures
             watch.Start();
             //start here
 
-            TestRobot.Run();
+            TestPrototype.Run();
 
 
 
