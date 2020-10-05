@@ -12,7 +12,7 @@ namespace DataStructures
             watch.Start();
             //start here
 
-
+            TestRobot.Run();
 
 
 
