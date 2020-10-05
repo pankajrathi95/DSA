@@ -34,40 +34,12 @@ public class DiameterOfBinaryTree
         public TreeNode right;
         public TreeNode(int x) { val = x; }
     }
-    public int CalcDiameterOfBinaryTree(TreeNode root)
-    {
-        if (root == null)
-        {
-            return 0;
-        }
-        int lheight = Height(root.left);
-        int rheight = Height(root.right);
-        return Math.Max(Math.Max(CalcDiameterOfBinaryTree(root.left), CalcDiameterOfBinaryTree(root.right)), lheight + rheight);
-
-    }
-
-    public int Height(TreeNode root)
-    {
-        if (root == null)
-        {
-            return 0;
-        }
-        int lH = Height(root.left);
-        int rH = Height(root.right);
-        return lH < rH ? rH + 1 : lH + 1;
-    }
-
-    //another way
-    int res = int.MinValue;
+    int ans;
     public int DiameterOfBinaryTreee(TreeNode root)
     {
-        if (root == null)
-        {
-            return 0;
-        }
-
+        ans = 1;
         Solve(root);
-        return res - 1;
+        return ans - 1;
     }
 
     private int Solve(TreeNode root)
@@ -77,11 +49,12 @@ public class DiameterOfBinaryTree
             return 0;
         }
 
-        int leftHeight = Solve(root.left);
-        int rightHeight = Solve(root.right);
+        int left = Solve(root.left);
+        int right = Solve(root.right);
 
-        res = Math.Max(res, 1 + leftHeight + rightHeight);
+        int temp = Math.Max(left, right) + 1;
+        ans = Math.Max(ans, left + right + 1);
 
-        return Math.Max(leftHeight, rightHeight) + 1;
+        return temp;
     }
 }

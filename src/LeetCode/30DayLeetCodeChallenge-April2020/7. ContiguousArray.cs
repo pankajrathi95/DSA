@@ -22,7 +22,7 @@ class ContiguousArray
     {
         Dictionary<int, int> hm = new Dictionary<int, int>();
         hm.Add(0, -1);
-        int count = 0, max = 0;
+        int count = 0, max = int.MinValue;
         for (int i = 0; i < nums.Length; i++)
         {
             count = count + (nums[i] == 1 ? 1 : -1);
