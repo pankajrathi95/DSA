@@ -13,7 +13,7 @@ namespace DataStructures
             watch.Start();
             //start here
 
-            TestPrototype.Run();
+            PizzaMaker.Run();
 
 
 
