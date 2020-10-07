@@ -13,7 +13,7 @@ namespace DataStructures
             watch.Start();
             //start here
 
-            PizzaMaker.Run();
+            PlayWithRemote.Run();
 
 
 
