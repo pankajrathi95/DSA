@@ -20,11 +20,11 @@ public class BinarySearch
         int mid = (start + end) / 2;
         if (nums[mid] > target)
         {
-            return BinarySearch(nums, target, start, mid - 1);
+            return Search(nums, target, start, mid - 1);
         }
         else if (nums[mid] < target)
         {
-            return BinarySearch(nums, target, mid + 1, end);
+            return Search(nums, target, mid + 1, end);
         }
         else
         {
