@@ -42,7 +42,6 @@ public class Codec
     public string serialize(TreeNode root)
     {
         StringBuilder sb = new StringBuilder();
-
         Solve(root, sb);
         return sb.ToString();
     }
