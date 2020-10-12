@@ -13,7 +13,8 @@ namespace DataStructures
             watch.Start();
             //start here
 
-            PlayWithRemote.Run();
+            RemoveDuplicateLetters removeDuplicateLetters = new RemoveDuplicateLetters();
+            removeDuplicateLetters.RemoveTheDuplicateLetters("bbcaac");
 
 
 
