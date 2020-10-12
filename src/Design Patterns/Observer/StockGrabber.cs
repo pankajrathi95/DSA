@@ -5,7 +5,7 @@ namespace Observer
 {
     public class StockGrabber : Subject
     {
-        private List<Observer> observers;
+        private IList<Observer> observers;
 
         public StockGrabber()
         {

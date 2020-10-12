@@ -13,8 +13,7 @@ namespace DataStructures
             watch.Start();
             //start here
 
-            RemoveDuplicateLetters removeDuplicateLetters = new RemoveDuplicateLetters();
-            removeDuplicateLetters.RemoveTheDuplicateLetters("bbcaac");
+            Observer.GrapStocks.Run();
 
 
 

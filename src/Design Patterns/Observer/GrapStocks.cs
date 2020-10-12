@@ -1,3 +1,5 @@
+using System;
+
 namespace Observer
 {
     public class GrapStocks
@@ -5,15 +7,15 @@ namespace Observer
         //Main function - runs the program
         public static void Run()
         {
-            StockGrabber stockGrabber = new StockGrabber();
+            Subject stockGrabber = new StockGrabber();
 
-            StockObserver stockObserver1 = new StockObserver(stockGrabber);
-            StockObserver stockObserver2 = new StockObserver(stockGrabber);
-            StockObserver stockObserver3 = new StockObserver(stockGrabber);
-            StockObserver stockObserver4 = new StockObserver(stockGrabber);
+            Observer stockObserver1 = new StockObserver(stockGrabber);
+            Observer stockObserver2 = new StockObserver(stockGrabber);
+            Observer stockObserver3 = new StockObserver(stockGrabber);
+            Observer stockObserver4 = new StockObserver(stockGrabber);
 
             stockGrabber.NotifyObserver();
-
+            Console.WriteLine("-- Unregister StockObserver2--");
             stockGrabber.UnRegister(stockObserver2);
             stockGrabber.NotifyObserver();
         }
