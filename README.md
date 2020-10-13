@@ -1,5 +1,11 @@
-# Data-Structures and Algorithms
+# Interview Prep
 
-This repo is mainly on the solutions to different Data structions questions and problems. Feel free to fork or raise a PR if you find any error.
+This Repo includes questions and solutions from
 
-I would be mainly writing the code in c#.
+1. LeetCode
+2. Cracking the coding interview
+3. HackerRank
+4. InterviewBit
+5. CodeWithMosh
+
+I have also added few Design Patterns. I might expand this repo to many other topics as well as I go along which are core fundamentals in CS and are useful for coding interviews
