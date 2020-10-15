@@ -53,6 +53,7 @@ public class BalancedBinaryTree
         }
     }
 
+    bool res = true;
     public bool IsBalanced(TreeNode root)
     {
         if (root == null)
@@ -60,7 +61,8 @@ public class BalancedBinaryTree
             return true;
         }
 
-        return Solve(root) != -1;
+        Solve(root);
+        return res;
     }
 
     private int Solve(TreeNode root)
@@ -73,11 +75,12 @@ public class BalancedBinaryTree
         int left = Solve(root.left);
         int right = Solve(root.right);
 
-        if (left == -1 || right == -1 || Math.Abs(left - right) > 1)
+        if (Math.Abs(left - right) > 1)
         {
-            return -1;
+            res = false;
         }
 
         return Math.Max(left, right) + 1;
+
     }
 }
