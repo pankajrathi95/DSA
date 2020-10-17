@@ -1,6 +1,5 @@
 /*
-#189 - https://leetcode.com/problems/rotate-array/
-
+#189 - https://leetcode.com/problems/rotate-array/submissions/
 Given an array, rotate the array to the right by k steps, where k is non-negative.
 
 Follow up:
@@ -37,17 +36,16 @@ public class RotateArray
 {
     public void Rotate(int[] nums, int k)
     {
-        k %= nums.Length;
-        for (int i = 0; i < k; i++)
-        {
-            int temp = nums[nums.Length - 1];
-            for (int j = nums.Length - 1; j > 0; j--)
-            {
-                nums[j] = nums[j - 1];
-            }
+        int[] A = new int[nums.Length];
 
-            nums[0] = temp;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            A[(i + k) % nums.Length] = nums[i];
+        }
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = A[i];
         }
     }
 }
-
