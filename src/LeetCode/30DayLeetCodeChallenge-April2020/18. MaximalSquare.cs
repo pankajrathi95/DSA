@@ -1,4 +1,5 @@
 /*
+#221 - https://leetcode.com/problems/maximal-square/
 Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
 
 Example:
@@ -15,7 +16,7 @@ Output: 4
 
 using System;
 
-class MaximumSquare
+class MaximalSquare
 {
     public int FindMaximalSquare(char[][] matrix)
     {

@@ -1,4 +1,5 @@
 /*
+#876 - https://leetcode.com/problems/middle-of-the-linked-list/
 Given a non-empty, singly linked list with head node head, return a middle node of linked list.
 
 If there are two middle nodes, return the second middle node.
@@ -27,30 +28,9 @@ public class MiddleLinkedList
         public ListNode next;
         public ListNode(int x) { val = x; }
     }
-    public ListNode MiddleNode(ListNode head)
-    {
-        int length = 1;
-        ListNode current = head;
-        while (current.next != null)
-        {
-            length++;
-            current = current.next;
-        }
-
-        int count = (length / 2) + 1;
-
-        current = head;
-        while (count > 1)
-        {
-            current = current.next;
-            count--;
-        }
-
-        return current;
-    }
 
     ///This is more faster and uses only single loop to find the middle element.
-    public ListNode MiddleNodeUsingSlowFast(ListNode head)
+    public ListNode MiddleNode(ListNode head)
     {
         ListNode slow = head;
         ListNode fast = head;
