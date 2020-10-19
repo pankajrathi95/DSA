@@ -81,6 +81,5 @@ public class BalancedBinaryTree
         }
 
         return Math.Max(left, right) + 1;
-
     }
 }
