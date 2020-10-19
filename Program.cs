@@ -13,12 +13,8 @@ namespace DataStructures
             watch.Start();
             //start here
 
-            MinimumDominoRotationsForEqualRow minimumDominoRotationsForEqualRow = new MinimumDominoRotationsForEqualRow();
-
-            int[] A = new int[] { 1, 2, 1, 1, 1, 2, 2, 2 };
-            int[] B = new int[] { 2, 1, 2, 2, 2, 2, 2, 2 };
-
-            minimumDominoRotationsForEqualRow.MinDominoRotations(A, B);
+            SearchInRotatedSortedArray searchInRotatedSortedArray = new SearchInRotatedSortedArray();
+            searchInRotatedSortedArray.Search(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 0);
 
             //end here
             watch.Stop();

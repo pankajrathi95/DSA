@@ -1,4 +1,5 @@
 /*
+#155 - https://leetcode.com/problems/min-stack/
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 push(x) -- Push element x onto stack.
@@ -24,43 +25,51 @@ using System.Collections.Generic;
 public class MinStack
 {
 
+    Stack<int> min;
+    Stack<int> stack;
     /** initialize your data structure here. */
-    LinkedList<int> linkedList;
-    int top = 0;
-    int minValue = 0;
     public MinStack()
     {
-        linkedList = new LinkedList<int>();
+        min = new Stack<int>();
+        stack = new Stack<int>();
     }
 
     public void Push(int x)
     {
-        linkedList.AddLast(x);
-        top++;
+        if (stack.Count == 0)
+        {
+            stack.Push(x);
+            min.Push(x);
+            return;
+        }
+
+        int peek = min.Peek();
+        if (peek > x)
+        {
+            min.Push(x);
+        }
+        else
+        {
+            min.Push(peek);
+        }
+
+        stack.Push(x);
     }
 
     public void Pop()
     {
-        linkedList.RemoveLast();
-
+        stack.Pop();
+        min.Pop();
     }
 
     public int Top()
     {
-        return linkedList.Last.Value;
+        return stack.Peek();
     }
 
     public int GetMin()
     {
-        minValue = linkedList.First.Value;
-        foreach (var item in linkedList)
-        {
-            if (minValue > item)
-            {
-                minValue = item;
-            }
-        }
-        return minValue;
+        return min.Peek();
     }
 }
 

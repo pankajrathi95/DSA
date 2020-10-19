@@ -1,4 +1,5 @@
 /*
+#283 - https://leetcode.com/problems/move-zeroes/
 Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
 Example:
@@ -15,18 +16,18 @@ public class MoveZeros
 {
     public void MoveZeroes(int[] nums)
     {
-        int index = 0;
+        int start = 0;
         for (int i = 0; i < nums.Length; i++)
         {
             if (nums[i] != 0)
             {
-                nums[index++] = nums[i];
+                nums[start++] = nums[i];
             }
         }
 
-        while (index < nums.Length)
+        while (start < nums.Length)
         {
-            nums[index++] = 0;
+            nums[start++] = 0;
         }
     }
 }
