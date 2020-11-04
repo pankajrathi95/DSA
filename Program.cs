@@ -11,10 +11,13 @@ namespace DataStructures
             Console.WriteLine("Hello World!!");
             var watch = new Stopwatch();
             watch.Start();
-            //start here
-
-            SearchInRotatedSortedArray searchInRotatedSortedArray = new SearchInRotatedSortedArray();
-            searchInRotatedSortedArray.Search(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 0);
+            //start here    
+            string[] words = new string[] { "ab", "cb", "ad", "bd", "ac", "ca", "da", "bc", "db", "adcb", "dabc", "abb", "acb" };
+            char[][] board = new char[2][];
+            board[0] = new char[] { 'a', 'b' };
+            board[1] = new char[] { 'c', 'd' };
+            WordSearchII wordSearchII = new WordSearchII();
+            wordSearchII.FindWords(board, words);
 
             //end here
             watch.Stop();
