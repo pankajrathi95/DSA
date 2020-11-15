@@ -13,10 +13,6 @@ namespace DataStructures
             watch.Start();
             //start here    
 
-            string s = "|**|*|*****|***||**|**|*";
-            int[] startIndices = new int[] { 1, 4, 1, 6, 3, 1 };
-            int[] endIndices = new int[] { 5, 6, 6, 10, 15, 24 };
-
 
 
 
