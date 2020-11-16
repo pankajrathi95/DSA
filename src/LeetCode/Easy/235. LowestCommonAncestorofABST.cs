@@ -50,14 +50,17 @@ public class LowestCommonAncestorofABST
 
         if (qVal > parentVal && pVal > parentVal)
         {
+            //Both p and q values are greater than the parent, then move to the right part of the tree.
             return LowestCommonAncestor(root.right, p, q);
         }
         else if (qVal < parentVal && pVal < parentVal)
         {
+            //Both p and q values are less than the parent, then move to the left part of the tree.
             return LowestCommonAncestor(root.left, p, q);
         }
         else
         {
+            //Now p and q will lie between the parent, return the parent which is root.
             return root;
         }
     }
