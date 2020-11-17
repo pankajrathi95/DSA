@@ -38,44 +38,33 @@ public class LongestMountaininArray
     public int LongestMountain(int[] A)
     {
         int start = 0, max = 0;
-        bool flag = true;
-        for (int i = 1; i < A.Length; i++)
-        {
-            if (A[i - 1] < A[i])
-            {
-                start = i - 1;
-                flag = false;
-                break;
-            }
-        }
-
-        if (flag)
-        {
-            return 0;
-        }
-
         int currentMax = 0;
         for (int i = start; i < A.Length - 1; i++)
         {
+            //if equal then start from the same point 
             if (A[i] == A[i + 1])
             {
                 currentMax = 0;
                 continue;
             }
 
+            //caculating the upward movement
             if (A[i] < A[i + 1])
             {
                 currentMax++;
             }
             else
             {
+                //if currentmax is zero that means we have a peek directy without upward movement
                 if (currentMax == 0)
                 {
                     continue;
                 }
 
+                //calculating the downward movement 
                 for (int j = i; j < A.Length - 1; j++)
                 {
+                    //if equal stop till here and assign the currentmax to the max if its greater
                     if (A[j] == A[j + 1])
                     {
                         currentMax++;
@@ -85,6 +74,7 @@ public class LongestMountaininArray
                         break;
                     }
 
+                    //calculate the downward
                     if (A[j] > A[j + 1])
                     {
                         currentMax++;
@@ -98,6 +88,7 @@ public class LongestMountaininArray
                         break;
                     }
 
+                    //calculate the max if we reached the end of the mountain.
                     if (j == A.Length - 2)
                     {
                         currentMax++;
