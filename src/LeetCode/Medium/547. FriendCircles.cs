@@ -34,7 +34,11 @@ M[i][i] == 1
 M[i][j] == M[j][i]
 */
 
-public class FriendCircles {
+using System;
+using System.Collections.Generic;
+
+public class FriendCircles
+{
     public class Graph
     {
         int V;
@@ -48,17 +52,18 @@ public class FriendCircles {
                 adjList.Add(i, new List<int>());
             }
         }
-        
+
         public void AddEdge(int from, int to)
         {
             adjList[from].Add(to);
         }
     }
-    
-    public int FindCircleNum(int[][] M) {
+
+    public int FindCircleNum(int[][] M)
+    {
         int people = Math.Max(M.Length, M[0].Length);
         Graph graph = new Graph(people);
-        
+
         for (int i = 0; i < M.Length; i++)
         {
             for (int j = 0; j < M[i].Length; j++)
@@ -69,7 +74,7 @@ public class FriendCircles {
                 }
             }
         }
-        
+
         int friends = 0;
         bool[] visited = new bool[people];
         for (int i = 0; i < people; i++)
@@ -80,10 +85,10 @@ public class FriendCircles {
                 Dfs(visited, i, graph.adjList);
             }
         }
-        
+
         return friends;
     }
-    
+
     private void Dfs(bool[] visited, int node, Dictionary<int, List<int>> adjList)
     {
         visited[node] = true;
