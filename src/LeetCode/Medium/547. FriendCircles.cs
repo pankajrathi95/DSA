@@ -61,6 +61,7 @@ public class FriendCircles
 
     public int FindCircleNum(int[][] M)
     {
+        //question is similar to find connected components in a graph
         int people = Math.Max(M.Length, M[0].Length);
         Graph graph = new Graph(people);
 
@@ -77,6 +78,7 @@ public class FriendCircles
 
         int friends = 0;
         bool[] visited = new bool[people];
+        //Do a Depth first search on every node and find the connected graphs
         for (int i = 0; i < people; i++)
         {
             if (!visited[i])
