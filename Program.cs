@@ -13,8 +13,8 @@ namespace DataStructures
             watch.Start();
             //start here    
 
-            LongestMountaininArray longestMountaininArray = new LongestMountaininArray();
-            longestMountaininArray.LongestMountain(new int[] { 2, 3, 3, 2, 0, 2 });
+            DecodeString decodeString = new DecodeString();
+            decodeString.DecodeTheString("3[a]2[bc]");
 
 
             //end here
