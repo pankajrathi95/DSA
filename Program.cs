@@ -13,9 +13,11 @@ namespace DataStructures
             watch.Start();
             //start here    
 
-            DecodeString decodeString = new DecodeString();
-            decodeString.DecodeTheString("3[a]2[bc]");
+            // DecodeString decodeString = new DecodeString();
+            // decodeString.DecodeTheString("3[a]2[bc]");
 
+            string StartDate = "2020-02-25";
+            DateTime dt = Convert.ToDateTime(StartDate);
 
             //end here
             watch.Stop();
