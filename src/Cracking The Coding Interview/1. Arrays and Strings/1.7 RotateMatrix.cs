@@ -7,6 +7,7 @@ public class RotateMatrix
 {
     public static int[][] RotateTheMatrix(int[][] matrix)
     {
+        //To rotate the array we need to first reverse the matrix and then transpose the matrix.
         int start = 0, end = matrix.Length - 1;
         while (start < end)
         {

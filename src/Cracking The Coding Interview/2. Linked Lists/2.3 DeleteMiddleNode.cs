@@ -19,13 +19,16 @@ public class DeleteMiddleNode
             next = null;
         }
     }
-    public static void DeleteNode(ListNode node, ListNode head)
+    public static bool DeleteNode(ListNode node)
     {
         if (node == null || node.next == null)
         {
-            return;
+            return false;
         }
-        node.val = node.next.val;
-        node.next = node.next.next;
+
+        var nextNode = node.next;
+        node.val = nextNode.val;
+        node.next = nextNode.next;
+        return true;
     }
 }
