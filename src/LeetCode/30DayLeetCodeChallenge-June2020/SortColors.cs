@@ -18,19 +18,33 @@ Could you come up with a one-pass algorithm using only constant space?
 
 public class SortColors
 {
-    public void SortTheColors(int[] nums)
+    public void SortColor(int[] nums)
     {
-        for (int i = 0; i < nums.Length; i++)
+        int low = 0, med = 0, high = nums.Length - 1;
+        while (med <= high)
         {
-            for (int j = i; j < nums.Length; j++)
+            if (nums[med] == 0)
             {
-                if (nums[i] > nums[j])
-                {
-                    int temp = nums[j];
-                    nums[j] = nums[i];
-                    nums[i] = temp;
-                }
+                Swap(nums, low, med);
+                low++;
+                med++;
+            }
+            else if (nums[med] == 1)
+            {
+                med++;
+            }
+            else if (nums[med] == 2)
+            {
+                Swap(nums, med, high);
+                high--;
             }
         }
+    }
+
+    private void Swap(int[] nums, int x, int y)
+    {
+        int temp = nums[x];
+        nums[x] = nums[y];
+        nums[y] = temp;
     }
 }
