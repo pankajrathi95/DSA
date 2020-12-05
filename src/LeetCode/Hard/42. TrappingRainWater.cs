@@ -23,6 +23,8 @@ n == height.length
 0 <= height[i] <= 105
 */
 
+using System;
+
 public class TrappingRainWater
 {
     public int Trap(int[] height)
