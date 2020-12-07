@@ -36,6 +36,8 @@ The number of nodes in the given tree is less than 6000.
 -100 <= node.val <= 100
 */
 
+using System.Collections.Generic;
+
 public class PopulatingNextRightPointersinEachNodeII
 {
     public class Node
