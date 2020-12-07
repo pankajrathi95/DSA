@@ -46,17 +46,12 @@ public class CombinationSum
 {
     public IList<IList<int>> FindCombinationSum(int[] candidates, int target)
     {
-        if (candidates == null)
-        {
-            return null;
-        }
-
         IList<IList<int>> result = new List<IList<int>>();
-        FindCombination(candidates, 0, target, new List<int>(), result);
+        BackTrack(result, new List<int>(), target, candidates, 0);
         return result;
     }
 
-    private void FindCombination(int[] candidates, int index, int target, IList<int> current, IList<IList<int>> result)
+    private void BackTrack(IList<IList<int>> result, IList<int> current, int target, int[] candidates, int index)
     {
         if (target == 0)
         {
@@ -64,14 +59,16 @@ public class CombinationSum
             return;
         }
 
+        if (target < 0)
+        {
+            return;
+        }
+
         for (int i = index; i < candidates.Length; i++)
         {
-            if (candidates[i] <= target)
-            {
-                current.Add(candidates[i]);
-                FindCombination(candidates, i, target - candidates[i], current, result);
-                current.Remove(candidates[i]);
-            }
+            current.Add(candidates[i]);
+            BackTrack(result, current, target - candidates[i], candidates, i);
+            current.RemoveAt(current.Count - 1);
         }
     }
 }
