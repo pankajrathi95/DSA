@@ -39,16 +39,15 @@ public class PermutationsII
 
         Array.Sort(nums);
         bool[] used = new bool[nums.Length];
-        IList<int> permutation = new List<int>();
-        Helper(nums, permutation, used, result);
+        BackTrack(nums, new List<int>(), used, result);
         return result;
     }
 
-    private void Helper(int[] nums, IList<int> permutation, bool[] used, IList<IList<int>> result)
+    private void BackTrack(int[] nums, IList<int> current, bool[] used, IList<IList<int>> result)
     {
-        if (permutation.Count == nums.Length)
+        if (current.Count == nums.Length)
         {
-            result.Add(new List<int>(permutation));
+            result.Add(new List<int>(current));
             return;
         }
 
@@ -60,10 +59,10 @@ public class PermutationsII
             }
 
             used[i] = true;
-            permutation.Add(nums[i]);
-            Helper(nums, permutation, used, result);
+            current.Add(nums[i]);
+            BackTrack(nums, current, used, result);
             used[i] = false;
-            permutation.RemoveAt(permutation.Count - 1);
+            current.RemoveAt(current.Count - 1);
             while (i + 1 < nums.Length && nums[i] == nums[i + 1])
             {
                 i++;
