@@ -44,16 +44,16 @@ using System.Collections.Generic;
 public class UniquePathsIII
 {
     int count = 0;
-    public int FindUniquePaths(int[][] grid)
+    public int UniquePaths(int[][] grid)
     {
-        int totalZerosCount = 0;
+        int totalZeros = 0;
         for (int i = 0; i < grid.Length; i++)
         {
             for (int j = 0; j < grid[i].Length; j++)
             {
                 if (grid[i][j] == 0)
                 {
-                    totalZerosCount++;
+                    totalZeros++;
                 }
             }
         }
@@ -64,7 +64,7 @@ public class UniquePathsIII
             {
                 if (grid[i][j] == 1)
                 {
-                    UniquePath(grid, i, j, totalZerosCount);
+                    BackTrack(grid, i, j, totalZeros);
                 }
             }
         }
@@ -72,31 +72,26 @@ public class UniquePathsIII
         return count;
     }
 
-    private void UniquePath(int[][] grid, int i, int j, int totalZerosCount)
+    private void BackTrack(int[][] grid, int i, int j, int totalZeros)
     {
-        if (i < 0 || i >= grid.Length || j < 0 || j >= grid[i].Length || grid[i][j] == -1 || grid[i][j] == -2)
+        if (i < 0 || i >= grid.Length || j < 0 || j >= grid[i].Length || grid[i][j] == -1 || grid[i][j] == -2 ||
+            totalZeros != -1 && grid[i][j] == 2)
         {
             return;
         }
 
-        if (grid[i][j] == 2 && totalZerosCount == -1)
+        if (totalZeros == -1 && grid[i][j] == 2)
         {
-            count += 1;
+            count++;
             return;
         }
 
-        if (grid[i][j] == 2 && !(totalZerosCount == -1))
-        {
-            return;
-        }
 
         grid[i][j] = -2;
-        totalZerosCount -= 1;
-        UniquePath(grid, i + 1, j, totalZerosCount);
-        UniquePath(grid, i, j + 1, totalZerosCount);
-        UniquePath(grid, i - 1, j, totalZerosCount);
-        UniquePath(grid, i, j - 1, totalZerosCount);
-
+        BackTrack(grid, i + 1, j, totalZeros - 1);
+        BackTrack(grid, i - 1, j, totalZeros - 1);
+        BackTrack(grid, i, j + 1, totalZeros - 1);
+        BackTrack(grid, i, j - 1, totalZeros - 1);
         grid[i][j] = 0;
     }
 }
