@@ -45,44 +45,35 @@ public class BinarySearchTreeIterator
             this.right = right;
         }
     }
-    TreeNode root;
-    List<int> visited;
+    LinkedList<int> list;
     public BinarySearchTreeIterator(TreeNode root)
     {
-        this.root = root;
-        visited = new List<int>();
-        AddNode(root);
+        list = new LinkedList<int>();
+        Inorder(root);
     }
 
-    private void AddNode(TreeNode root)
+    private void Inorder(TreeNode root)
     {
         if (root == null)
         {
             return;
         }
 
-        AddNode(root.left);
-        visited.Add(root.val);
-        AddNode(root.right);
+        Inorder(root.left);
+        list.AddLast(root.val);
+        Inorder(root.right);
     }
 
-    /** @return the next smallest number */
     public int Next()
     {
-        if (visited.Count == 0)
-        {
-            return -1;
-        }
-
-        int x = visited[0];
-        visited.Remove(x);
-        return x;
+        int val = list.First.Value;
+        list.RemoveFirst();
+        return val;
     }
 
-    /** @return whether we have a next smallest number */
     public bool HasNext()
     {
-        return visited.Count != 0;
+        return list.Count != 0;
     }
 }
 
