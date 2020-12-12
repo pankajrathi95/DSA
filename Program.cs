@@ -16,8 +16,8 @@ namespace DataStructures
             // DecodeString decodeString = new DecodeString();
             // decodeString.DecodeTheString("3[a]2[bc]");
 
-            string StartDate = "2020-02-25";
-            DateTime dt = Convert.ToDateTime(StartDate);
+            RemoveDuplicatesFromSortedArrayII removeDuplicatesFromSortedArrayII = new RemoveDuplicatesFromSortedArrayII();
+            removeDuplicatesFromSortedArrayII.RemoveDuplicates(new int[] { 0, 0, 1, 1, 1, 1, 2, 3, 3 });
 
             //end here
             watch.Stop();
