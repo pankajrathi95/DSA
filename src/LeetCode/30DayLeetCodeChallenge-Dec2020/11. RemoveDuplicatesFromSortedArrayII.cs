@@ -45,36 +45,29 @@ public class RemoveDuplicatesFromSortedArrayII
 {
     public int RemoveDuplicates(int[] nums)
     {
-        if (nums == null || nums.Length == 0)
+        if (nums.Length == 0)
         {
             return 0;
         }
 
-        int slow = 0, fast = 0, count = 0;
-        while (fast < nums.Length)
+        int j = 1, count = 1;
+        for (int i = 1; i < nums.Length; i++)
         {
-            if (nums[slow] == nums[fast])
+            if (nums[i] == nums[i - 1])
             {
                 count++;
-                fast++;
-            }
-            else if (nums[slow] != nums[fast] && count <= 2)
-            {
-                slow = fast;
-                count = 0;
-            }
-            else if (nums[slow] != nums[fast] && count > 2)
-            {
-                slow += 2;
-                nums[slow] = nums[fast++];
             }
             else
             {
-                nums[++slow] = nums[fast++];
-                count = 0;
+                count = 1;
+            }
+
+            if (count <= 2)
+            {
+                nums[j++] = nums[i];
             }
         }
 
-        return slow + 1;
+        return j;
     }
 }

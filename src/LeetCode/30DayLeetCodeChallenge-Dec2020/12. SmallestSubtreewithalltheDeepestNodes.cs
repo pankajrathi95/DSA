@@ -41,67 +41,40 @@ The values of the nodes in the tree are unique.
 
 
 using System;
-/**
-* Definition for a binary tree node.
-* public class TreeNode {
-*     public int val;
-*     public TreeNode left;
-*     public TreeNode right;
-*     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
-*         this.val = val;
-*         this.left = left;
-*         this.right = right;
-*     }
-* }
-*/
 public class SmallestSubtreewithalltheDeepestNodes
 {
-    public class Node
-    {
-        public TreeNode result;
-        public int height;
-        public Node(TreeNode result = null, int height = 0)
-        {
-            this.height = height;
-            this.result = result;
-        }
-    }
+    TreeNode result = null;
+    int maxDepth = -1;
     public TreeNode SubtreeWithAllDeepest(TreeNode root)
     {
-        return Depth(root);
+        Depth(root, 0);
+        return result;
     }
 
-    private TreeNode Depth(TreeNode root)
+    /*
+    We first do a post order traversal and also maintain the height of the tree at the current node.
+    if you find both subtrees are equal that means we found the root. just check if the depth is maximum store the root.
+    for the depth function return the maximum height of left and right tree.
+    */
+    private int Depth(TreeNode root, int depth)
     {
         if (root == null)
         {
-            return null;
+            return depth;
         }
 
-        int left = Height(root.left);
-        int right = Height(root.right);
+        int left = Depth(root.left, depth + 1);
+        int right = Depth(root.right, depth + 1);
 
         if (left == right)
         {
-            return root;
-        }
-        else if (left > right)
-        {
-            return Depth(root.left);
-        }
-        else
-        {
-            return Depth(root.right);
-        }
-    }
-
-    private int Height(TreeNode root)
-    {
-        if (root == null)
-        {
-            return 0;
+            maxDepth = Math.Max(maxDepth, left);
+            if (maxDepth == left)
+            {
+                result = root;
+            }
         }
 
-        return Math.Max(Height(root.left), Height(root.right)) + 1;
+        return Math.Max(left, right);
     }
 }
