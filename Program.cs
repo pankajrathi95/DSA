@@ -16,8 +16,8 @@ namespace DataStructures
             // DecodeString decodeString = new DecodeString();
             // decodeString.DecodeTheString("3[a]2[bc]");
 
-            RemoveDuplicatesFromSortedArrayII removeDuplicatesFromSortedArrayII = new RemoveDuplicatesFromSortedArrayII();
-            removeDuplicatesFromSortedArrayII.RemoveDuplicates(new int[] { 0, 0, 1, 1, 1, 1, 2, 3, 3 });
+            SquaresofaSortedArray removeDuplicatesFromSortedArrayII = new SquaresofaSortedArray();
+            removeDuplicatesFromSortedArrayII.SortedSquares(new int[] { -4, -1, 0, 3, 10 });
 
             //end here
             watch.Stop();
