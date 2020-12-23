@@ -48,8 +48,14 @@ public class TwoSum
                 return new int[] { values[diff], i };
             }
 
-            if (values.ContainsKey(nums[i])) values[nums[i]] = i;
-            else values.Add(nums[i], i);
+            if (values.ContainsKey(nums[i]))
+            {
+                values[nums[i]] = i;
+            }
+            else
+            {
+                values.Add(nums[i], i);
+            }
         }
 
         return new int[] { };
