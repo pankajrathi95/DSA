@@ -52,12 +52,13 @@ public class PseudoPalindromicPathsinABinaryTree
             this.right = right;
         }
     }
-    List<string> result = new List<string>();
+    List<string> results = new List<string>();
+    //Naive solution
     public int PseudoPalindromicPaths(TreeNode root)
     {
         Solve(root, "");
         int count = 0;
-        foreach (var res in result)
+        foreach (var res in results)
         {
             if (IsPalindrome(res))
             {
@@ -78,7 +79,7 @@ public class PseudoPalindromicPathsinABinaryTree
         str += root.val;
         if (root.left == null && root.right == null)
         {
-            result.Add(str);
+            results.Add(str);
             str = str.Substring(0, str.Length - 1);
         }
 
@@ -112,5 +113,51 @@ public class PseudoPalindromicPathsinABinaryTree
         }
 
         return oddFreq <= 1 ? true : false;
+    }
+
+    //Optimal solution
+    int result = 0;
+    public int PseudoPalindromicPathss(TreeNode root)
+    {
+        int[] map = new int[10];
+        Solve(root, map);
+        return result;
+    }
+
+    public void Solve(TreeNode root, int[] map)
+    {
+        if (root == null)
+        {
+            return;
+        }
+
+        map[root.val] += 1;
+        if (root.left == null && root.right == null && IsPalindrome(map))
+        {
+            result++;
+        }
+
+        Solve(root.left, map);
+        Solve(root.right, map);
+        map[root.val] -= 1;
+    }
+
+    public bool IsPalindrome(int[] map)
+    {
+        int count = 0;
+        foreach (int m in map)
+        {
+            if (m % 2 != 0)
+            {
+                count++;
+            }
+
+            if (count > 1)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
