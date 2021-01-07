@@ -23,8 +23,20 @@ The number of nodes in the list is in the range [0, 300].
 The list is guaranteed to be sorted in ascending order.
 */
 
-public class RemoveDuplicatesFromSortedListII {
-    public ListNode DeleteDuplicates(ListNode head) {
+public class RemoveDuplicatesFromSortedListII
+{
+    public class ListNode
+    {
+        public int val;
+        public ListNode next;
+        public ListNode(int val = 0, ListNode next = null)
+        {
+            this.val = val;
+            this.next = next;
+        }
+    }
+    public ListNode DeleteDuplicates(ListNode head)
+    {
         if (head == null) return null;
         ListNode fakeHead = new ListNode(0);
         fakeHead.next = head;
@@ -36,7 +48,7 @@ public class RemoveDuplicatesFromSortedListII {
             {
                 current = current.next;
             }
-            
+
             if (prev.next == current)
             {
                 prev = prev.next;
@@ -45,10 +57,10 @@ public class RemoveDuplicatesFromSortedListII {
             {
                 prev.next = current.next;
             }
-            
+
             current = current.next;
         }
-        
+
         return fakeHead.next;
     }
 }
