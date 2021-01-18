@@ -36,23 +36,30 @@ public class BinaryTreeZigzagLevelOrder
     }
     public IList<IList<int>> ZigzagLevelOrder(TreeNode root)
     {
+        IList<IList<int>> result = new List<IList<int>>();
         if (root == null)
         {
-            return new List<IList<int>>();
+            return result;
         }
 
-        IList<IList<int>> result = new List<IList<int>>();
         Queue<TreeNode> queue = new Queue<TreeNode>();
         queue.Enqueue(root);
-        int direction = 1;
+        bool leftToRight = true;
         while (queue.Count != 0)
         {
             int size = queue.Count;
-            List<int> currentLevel = new List<int>();
+            LinkedList<int> list = new LinkedList<int>();
             for (int i = 0; i < size; i++)
             {
                 var current = queue.Dequeue();
-                currentLevel.Add(current.val);
+                if (leftToRight)
+                {
+                    list.AddLast(current.val);
+                }
+                else
+                {
+                    list.AddFirst(current.val);
+                }
 
                 if (current.left != null)
                 {
@@ -65,22 +72,8 @@ public class BinaryTreeZigzagLevelOrder
                 }
             }
 
-            direction++;
-            result.Add(currentLevel);
-        }
-
-        for (int i = 0; i < result.Count; i++)
-        {
-            if (i % 2 != 0)
-            {
-                Console.WriteLine(i + " " + result[i][0]);
-                //IList<int> abstractList;
-                var concreteList = new List<int>(result[i]);
-                concreteList.Reverse();
-                result[i] = concreteList;
-                Console.WriteLine(i + " " + result[i][0]);
-
-            }
+            result.Add(new List<int>(list));
+            leftToRight = !leftToRight;
         }
 
         return result;
