@@ -63,4 +63,35 @@ public class ValidParentheses
 
         return stack.Count == 0;
     }
+
+    //one more solution
+    public bool IsValid2(string s)
+    {
+        Stack<char> stack = new Stack<char>();
+        foreach (var ch in s)
+        {
+            if (stack.Count == 0 &&
+                (ch == ']' || ch == '}' || ch == ')'))
+            {
+                return false;
+            }
+
+            if (ch == '(' || ch == '{' || ch == '[')
+            {
+                stack.Push(ch);
+            }
+            else if (ch == ')' && stack.Peek() != '(' ||
+                   ch == ']' && stack.Peek() != '[' ||
+                   ch == '}' && stack.Peek() != '{')
+            {
+                return false;
+            }
+            else
+            {
+                stack.Pop();
+            }
+        }
+
+        return stack.Count == 0;
+    }
 }
