@@ -13,12 +13,14 @@ namespace DataStructures
             watch.Start();
             //start here    
 
-            // DecodeString decodeString = new DecodeString();
-            // decodeString.DecodeTheString("3[a]2[bc]");
+            LongestIncreasingPathinaMatrix lp = new LongestIncreasingPathinaMatrix();
+            int[][] matrix = new int[3][];
 
-            SquaresofaSortedArray removeDuplicatesFromSortedArrayII = new SquaresofaSortedArray();
-            removeDuplicatesFromSortedArrayII.SortedSquares(new int[] { -4, -1, 0, 3, 10 });
+            matrix[0] = new int[] { 3, 4, 5 };
+            matrix[1] = new int[] { 3, 2, 6 };
+            matrix[2] = new int[] { 2, 2, 1 };
 
+            int count = lp.LongestIncreasingPath(matrix);
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
