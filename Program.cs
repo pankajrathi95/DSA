@@ -19,7 +19,6 @@ namespace DataStructures
             matrix[0] = new int[] { 3, 4, 5 };
             matrix[1] = new int[] { 3, 2, 6 };
             matrix[2] = new int[] { 2, 2, 1 };
-
             int count = lp.LongestIncreasingPath(matrix);
             //end here
             watch.Stop();
