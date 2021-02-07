@@ -13,8 +13,6 @@ namespace DataStructures
             watch.Start();
             //start here    
 
-            SimplifyPath sp = new SimplifyPath();
-            sp.SimplifyPaths("/a//b////c/d//././/..");
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
