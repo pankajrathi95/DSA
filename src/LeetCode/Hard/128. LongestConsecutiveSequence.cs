@@ -25,11 +25,44 @@ Follow up: Could you implement the O(n) solution?
 */
 
 using System;
+using System.Collections.Generic;
 
 public class LongestConsecutiveSequence
 {
-    //O(nlogn) solution
+    //O(n) Solution
     public int LongestConsecutive(int[] nums)
+    {
+        HashSet<int> values = new HashSet<int>();
+        foreach (var num in nums)
+        {
+            if (!values.Contains(num))
+            {
+                values.Add(num);
+            }
+        }
+
+        int result = 0;
+        foreach (var num in nums)
+        {
+            if (!values.Contains(num - 1))
+            {
+                int currentNum = num;
+                int max = 1;
+
+                while (values.Contains(currentNum + 1))
+                {
+                    max++;
+                    currentNum++;
+                }
+
+                result = Math.Max(max, result);
+            }
+        }
+        return result;
+    }
+
+    //O(nlogn) solution
+    public int LongestConsecutivee(int[] nums)
     {
         if (nums.Length == 0)
         {
