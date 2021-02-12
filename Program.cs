@@ -13,8 +13,8 @@ namespace DataStructures
             watch.Start();
             //start here   
 
-            LongestConsecutiveSequence longestConsecutiveSequence = new LongestConsecutiveSequence();
-            longestConsecutiveSequence.LongestConsecutive(new int[] { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 });
+            MaximumLengthofRepeatedSubarray maximumLengthofRepeatedSubarray = new MaximumLengthofRepeatedSubarray();
+            maximumLengthofRepeatedSubarray.FindLength(new int[] { 1, 2, 3, 2, 1 }, new int[] { 3, 2, 1, 4, 7 });
 
             //end here
             watch.Stop();
