@@ -96,4 +96,33 @@ public class SummrayRanges
 
         return result;
     }
+
+    public IList<string> SummaryRangess(int[] nums)
+    {
+        IList<string> result = new List<string>();
+        if (nums.Length == 0)
+        {
+            return result;
+        }
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            int num = nums[i];
+            while (i + 1 < nums.Length && nums[i] + 1 == nums[i + 1])
+            {
+                i++;
+            }
+
+            if (num == nums[i])
+            {
+                result.Add(num.ToString());
+            }
+            else
+            {
+                result.Add(num + "->" + nums[i]);
+            }
+        }
+
+        return result;
+    }
 }
