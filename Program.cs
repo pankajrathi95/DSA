@@ -12,9 +12,14 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here   
+            MergeKSortedLists.ListNode[] list = new MergeKSortedLists.ListNode[3];
 
-            MaximumLengthofRepeatedSubarray maximumLengthofRepeatedSubarray = new MaximumLengthofRepeatedSubarray();
-            maximumLengthofRepeatedSubarray.FindLength(new int[] { 1, 2, 3, 2, 1 }, new int[] { 3, 2, 1, 4, 7 });
+            list[0] = new MergeKSortedLists.ListNode(1, new MergeKSortedLists.ListNode(4, new MergeKSortedLists.ListNode(5, null)));
+            list[1] = new MergeKSortedLists.ListNode(1, new MergeKSortedLists.ListNode(3, new MergeKSortedLists.ListNode(4, null)));
+            list[2] = new MergeKSortedLists.ListNode(2, new MergeKSortedLists.ListNode(6, null));
+
+            MergeKSortedLists mergeKSortedLists = new MergeKSortedLists();
+            mergeKSortedLists.MergeKLists(list);
 
             //end here
             watch.Stop();
