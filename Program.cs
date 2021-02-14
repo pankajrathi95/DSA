@@ -12,14 +12,18 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here   
+            int[][] graph = new int[][] {
+                new int[] {1, 3},
+                new int[] {0,2},
+                new int[] {1,3},
+                new int[] {0,2}
+            };
+
+
+
             MergeKSortedLists.ListNode[] list = new MergeKSortedLists.ListNode[3];
-
-            list[0] = new MergeKSortedLists.ListNode(1, new MergeKSortedLists.ListNode(4, new MergeKSortedLists.ListNode(5, null)));
-            list[1] = new MergeKSortedLists.ListNode(1, new MergeKSortedLists.ListNode(3, new MergeKSortedLists.ListNode(4, null)));
-            list[2] = new MergeKSortedLists.ListNode(2, new MergeKSortedLists.ListNode(6, null));
-
-            MergeKSortedLists mergeKSortedLists = new MergeKSortedLists();
-            mergeKSortedLists.MergeKLists(list);
+            IsGraphBipartite iss = new IsGraphBipartite();
+            Console.WriteLine(iss.IsBipartite(graph));
 
             //end here
             watch.Stop();
