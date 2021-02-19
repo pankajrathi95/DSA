@@ -12,18 +12,9 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here   
-            int[][] graph = new int[][] {
-                new int[] {1, 3},
-                new int[] {0,2},
-                new int[] {1,3},
-                new int[] {0,2}
-            };
 
-
-
-            MergeKSortedLists.ListNode[] list = new MergeKSortedLists.ListNode[3];
-            IsGraphBipartite iss = new IsGraphBipartite();
-            Console.WriteLine(iss.IsBipartite(graph));
+            MaximumPointsYouCanObtainFromCards maximumPointsYouCanObtainFromCards = new MaximumPointsYouCanObtainFromCards();
+            maximumPointsYouCanObtainFromCards.MaxScore(new int[] { 96, 90, 41, 82, 39, 74, 64, 50, 30 }, 8);
 
             //end here
             watch.Stop();
