@@ -12,10 +12,21 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here   
+            int[][] grid = new int[][]
+            {
+                new int[] { 1, 1, 0, 0, 0 },
+                new int[] { 1, 1, 0, 0, 0 },
+                new int[] { 0, 0, 0, 1, 1 },
+                new int[] { 0, 0, 0, 1, 1 }
+            };
 
-            MaximumPointsYouCanObtainFromCards maximumPointsYouCanObtainFromCards = new MaximumPointsYouCanObtainFromCards();
-            maximumPointsYouCanObtainFromCards.MaxScore(new int[] { 96, 90, 41, 82, 39, 74, 64, 50, 30 }, 8);
 
+
+            MaxAreaOfIsland max = new MaxAreaOfIsland();
+
+
+
+            max.MaxAreaOfIslands(grid);
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
