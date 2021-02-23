@@ -29,6 +29,13 @@ class EmployeeImportance
         public int id;
         public int importance;
         public IList<int> subordinates;
+
+        public Employee(int id, int importance, IList<int> subordinates)
+        {
+            this.id = id;
+            this.importance = importance;
+            this.subordinates = subordinates;
+        }
     }
     public int GetImportance(IList<Employee> employees, int id)
     {

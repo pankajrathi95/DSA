@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Prototype;
 
@@ -12,21 +13,13 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here   
-            int[][] grid = new int[][]
-            {
-                new int[] { 1, 1, 0, 0, 0 },
-                new int[] { 1, 1, 0, 0, 0 },
-                new int[] { 0, 0, 0, 1, 1 },
-                new int[] { 0, 0, 0, 1, 1 }
-            };
-
-
-
-            MaxAreaOfIsland max = new MaxAreaOfIsland();
-
-
-
-            max.MaxAreaOfIslands(grid);
+            LongestWordinDictionaryThroughDeleting res = new LongestWordinDictionaryThroughDeleting();
+            IList<string> words = new List<string>();
+            words.Add("ale");
+            words.Add("apple");
+            words.Add("monkey");
+            words.Add("plea");
+            res.FindLongestWord("abpcplea", words);
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
