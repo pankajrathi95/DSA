@@ -13,13 +13,8 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here   
-            LongestWordinDictionaryThroughDeleting res = new LongestWordinDictionaryThroughDeleting();
-            IList<string> words = new List<string>();
-            words.Add("ale");
-            words.Add("apple");
-            words.Add("monkey");
-            words.Add("plea");
-            res.FindLongestWord("abpcplea", words);
+            FruitIntoBasketss fruit = new FruitIntoBasketss();
+            fruit.TotalFruit(new int[] { 3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4 });
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
