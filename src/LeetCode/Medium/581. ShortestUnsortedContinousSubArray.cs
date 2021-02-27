@@ -34,7 +34,56 @@ using System;
 
 public class ShortestUnsortedContinousSubArray
 {
+    //optimal
     public int FindUnsortedSubarray(int[] nums)
+    {
+        if (nums.Length == 1)
+        {
+            return 0;
+        }
+
+        int min = Int32.MaxValue;
+        int max = Int32.MinValue;
+
+        for (int i = 1; i < nums.Length; i++)
+        {
+            if (nums[i] < nums[i - 1])
+            {
+                min = Math.Min(min, nums[i]);
+            }
+        }
+
+        for (int i = nums.Length - 2; i >= 0; i--)
+        {
+            if (nums[i] > nums[i + 1])
+            {
+                max = Math.Max(max, nums[i]);
+            }
+        }
+
+        if (min == Int32.MaxValue && max == Int32.MinValue)
+        {
+            return 0;
+        }
+
+        int start = 0, end = nums.Length - 1;
+        for (; start < nums.Length; start++)
+        {
+            if (nums[start] > min)
+                break;
+        }
+
+        for (; end >= 0; end--)
+        {
+            if (nums[end] < max)
+                break;
+        }
+
+        return end - start + 1;
+    }
+
+    //not optimal
+    public int FindTheUnsortedSubarray(int[] nums)
     {
         int[] newNums = (int[])nums.Clone();
         Array.Sort(nums);
