@@ -37,18 +37,21 @@ public class NextPermutation
 {
     public void FindNextPermutation(int[] nums)
     {
+        //first get which index from the last element the number starts to decrease
         int index = nums.Length - 2;
         while (index >= 0 && nums[index] >= nums[index + 1])
         {
             index--;
         }
 
+        //if there is no index then just reverse the list.
         if (index == -1)
         {
             Reverse(nums, 0, nums.Length - 1);
             return;
         }
 
+        //from the last number till index. Swap whever you see any number greater than index.
         for (int i = nums.Length - 1; i > index; i--)
         {
             if (nums[i] > nums[index])
@@ -58,6 +61,7 @@ public class NextPermutation
             }
         }
 
+        //Reverse the right part of list i.e., from (index + 1) th element
         Reverse(nums, index + 1, nums.Length - 1);
     }
 
