@@ -124,6 +124,7 @@ public class MyHashMap
  */
 public class MyHashMap_NoCollision
 {
+    //this is a very naive solution. Not at all recommended.
     int[] map;
     /** Initialize your data structure here. */
     public MyHashMap_NoCollision()

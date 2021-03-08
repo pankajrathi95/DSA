@@ -12,9 +12,16 @@ namespace DataStructures
             Console.WriteLine("Hello World!!");
             var watch = new Stopwatch();
             watch.Start();
-            //start here   
-            FruitIntoBasketss fruit = new FruitIntoBasketss();
-            fruit.TotalFruit(new int[] { 3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4 });
+            //start here
+            IList<string> wordList = new List<string>();
+            wordList.Add("hot");
+            wordList.Add("dog");
+            wordList.Add("dot");
+            wordList.Add("lot");
+            wordList.Add("log");
+            wordList.Add("cog");
+            WordLadder game = new WordLadder();
+            game.LadderLength("hit", "cog", wordList);
             //end here
             watch.Stop();
             Console.WriteLine("Time Taken: " + watch.ElapsedMilliseconds + " ms");
