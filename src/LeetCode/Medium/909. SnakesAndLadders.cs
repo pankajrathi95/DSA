@@ -56,6 +56,7 @@ public class SnakesAndLadders
         Dictionary<int, int[]> map = new Dictionary<int, int[]>();
         int row = n - 1, col = 0;
         bool direction = true;
+        //forming the map for number to the board row and column.
         for (int i = 1; i <= n * n; i++)
         {
             map.Add(i, new int[] { row, col });
