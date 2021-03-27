@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using Prototype;
 
 namespace DataStructures
 {
@@ -13,8 +11,6 @@ namespace DataStructures
             var watch = new Stopwatch();
             watch.Start();
             //start here
-            int testCases = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(testCases);
 
 
             //end here
