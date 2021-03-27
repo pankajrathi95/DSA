@@ -41,8 +41,13 @@ A[i] and B[i] consist only of lowercase letters.
 All words in A[i] are unique: there isn't i != j with A[i] == A[j].
 */
 
-public class WordSubsets {
-    public IList<string> Wordsubsets(string[] A, string[] B) {
+using System;
+using System.Collections.Generic;
+
+public class WordSubsets
+{
+    public IList<string> Wordsubsets(string[] A, string[] B)
+    {
         IList<string> result = new List<string>();
         int[] target = new int[26];
         foreach (var b in B)
@@ -54,7 +59,7 @@ public class WordSubsets {
                 target[c - 'a'] = Math.Max(target[c - 'a'], temp[c - 'a']);
             }
         }
-        
+
         foreach (var a in A)
         {
             int[] arr = new int[26];
@@ -62,16 +67,16 @@ public class WordSubsets {
             {
                 arr[c - 'a']++;
             }
-            
+
             if (Subset(arr, target))
             {
                 result.Add(a);
             }
         }
-        
+
         return result;
     }
-    
+
     private bool Subset(int[] arr, int[] target)
     {
         for (int i = 0; i < 26; i++)
@@ -81,7 +86,7 @@ public class WordSubsets {
                 return false;
             }
         }
-        
+
         return true;
     }
 }
