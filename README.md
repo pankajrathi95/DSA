@@ -1,4 +1,4 @@
-# Interview Prep
+# Data Structures and Algorithms
 
 Company-wise Leetcode questions PDF : [Company-wise Questions](src/LeetCode/CompanyWiseQuestions) 
 
@@ -10,4 +10,3 @@ This Repo includes questions and solutions from
 4. InterviewBit
 5. CodeWithMosh
 
-I have also added few Design Patterns. I might expand this repo to many other topics as well as I go along which are core fundamentals in CS and are useful for coding interviews
