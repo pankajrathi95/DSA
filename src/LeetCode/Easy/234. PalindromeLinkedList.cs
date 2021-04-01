@@ -41,12 +41,13 @@ public class PalindromeLinkedList
     }
 
     //O(1) space
-    public bool IsPalindrome(ListNode head) {
+    public bool IsPalindrome(ListNode head)
+    {
         if (head == null || head.next == null)
         {
             return true;
         }
-        
+
         var slow = head;
         var fast = head;
         while (fast.next != null && fast.next.next != null)
@@ -54,7 +55,7 @@ public class PalindromeLinkedList
             fast = fast.next.next;
             slow = slow.next;
         }
-        
+
         ListNode res = Reverse(slow.next);
         while (res != null)
         {
@@ -62,14 +63,14 @@ public class PalindromeLinkedList
             {
                 return false;
             }
-            
+
             res = res.next;
             head = head.next;
         }
-        
+
         return true;
     }
-    
+
     private ListNode Reverse(ListNode head)
     {
         ListNode prev = null;
@@ -80,12 +81,12 @@ public class PalindromeLinkedList
             prev = head;
             head = next;
         }
-        
+
         return prev;
     }
 
     // O(n) space.
-    public bool IsPalindrome(ListNode head)
+    public bool IsPalindrome2(ListNode head)
     {
         ListNode slow = head, fast = head;
         Stack<ListNode> stack = new Stack<ListNode>();
