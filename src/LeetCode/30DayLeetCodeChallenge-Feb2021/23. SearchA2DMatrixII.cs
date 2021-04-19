@@ -32,7 +32,32 @@ All the integers in each column are sorted in ascending order.
 
 public class SearchA2DMatrixII
 {
+    //Optimized Solution.
     public bool SearchMatrix(int[][] matrix, int target)
+    {
+        int row = 0, col = matrix[0].Length - 1;
+        while (col >= 0 && row < matrix.Length)
+        {
+            if (target == matrix[row][col])
+            {
+                return true;
+            }
+            else if (target < matrix[row][col])
+            {
+                col--;
+            }
+            else
+            {
+                row++;
+            }
+        }
+
+        return false;
+    }
+
+
+    //Non-optimal solution
+    public bool SearchMatrix_(int[][] matrix, int target)
     {
         for (int i = 0; i < matrix.Length; i++)
         {
