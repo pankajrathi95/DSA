@@ -35,6 +35,7 @@ Constraints:
 2 <= s.length <= 1000
 s.length is even.
 s consists of uppercase and lowercase letters.
+
    Hide Hint #1  
 Create a function that checks if a character is a vowel, either uppercase or lowercase.
 */
