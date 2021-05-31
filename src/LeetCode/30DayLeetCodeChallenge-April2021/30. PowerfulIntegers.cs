@@ -33,22 +33,28 @@ Constraints:
 0 <= bound <= 106
 */
 
-public class PowerfulIntegers {
-    public IList<int> FindPowerfulIntegers(int x, int y, int bound) {
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class PowerfulIntegers
+{
+    public IList<int> FindPowerfulIntegers(int x, int y, int bound)
+    {
         HashSet<int> result = new HashSet<int>();
         if (x == 1 && y == 1)
         {
             if (x + y <= bound)
                 result.Add(x + y);
-            
+
             return result.ToList();
         }
-        
+
         for (int i = 0; Math.Pow(x, i) < bound; i++)
         {
             for (int j = 0; Math.Pow(y, j) < bound; j++)
             {
-                int val = (int) (Math.Pow(x, i) + Math.Pow(y, j));
+                int val = (int)(Math.Pow(x, i) + Math.Pow(y, j));
                 if (val <= bound)
                 {
                     result.Add(val);
@@ -57,15 +63,15 @@ public class PowerfulIntegers {
                 {
                     break;
                 }
-                
+
                 if (y == 1)
                     break;
             }
-            
+
             if (x == 1)
                 break;
         }
-        
+
         return result.ToList();
     }
 }
