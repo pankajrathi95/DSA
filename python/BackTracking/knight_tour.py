@@ -1,3 +1,5 @@
+#Find the possible path such that the knight visits all the cells in the matrix
+
 def is_safe(n, matrix, i, j):
     if i >= 0 and i < n and j >= 0 and j < n and matrix[i][j] == -1:
         return True
