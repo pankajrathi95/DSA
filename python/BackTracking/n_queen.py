@@ -28,7 +28,6 @@ def is_safe(matrix, row, col, n):
     
 def queen_solve(matrix, n, row, result):
     if row == n:
-
         new_val = copy.deepcopy(matrix)
         result.append(new_val)
     
