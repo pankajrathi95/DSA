@@ -15,7 +15,7 @@ def is_safe(matrix, row, col, n):
     for x in range(len(possible_moves)):
         new_x = row
         new_y = col
-        for y in range(n):
+        for _ in range(n):
             new_x += possible_moves[x][0]
             new_y += possible_moves[x][1]
             if not (new_x >= 0 and new_x < n and new_y >= 0 and new_y < n):
